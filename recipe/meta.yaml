@@ -30,13 +30,13 @@ requirements:
   host:
     - libignition-math4
     - urdfdom
-    - boost-cpp 1.71.*
+    - boost-cpp >=1.71
     - tinyxml
     - console_bridge
   run:
     - libignition-math4
     - urdfdom
-    - boost-cpp 1.71.*
+    - boost-cpp >=1.71
     - tinyxml
     - console_bridge
 
