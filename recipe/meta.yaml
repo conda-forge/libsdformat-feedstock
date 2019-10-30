@@ -12,7 +12,7 @@ source:
       - use-external-deps.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx or win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -30,13 +30,13 @@ requirements:
   host:
     - libignition-math4
     - urdfdom
-    - boost-cpp
+    - boost-cpp >=1.71
     - tinyxml
     - console_bridge
   run:
     - libignition-math4
     - urdfdom
-    - boost-cpp
+    - boost-cpp >=1.71
     - tinyxml
     - console_bridge
 
