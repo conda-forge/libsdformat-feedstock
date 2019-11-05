@@ -10,9 +10,10 @@ source:
     sha256: 1920c1dac52f178da2b17b5de094369e21f4ee3f0fbb64d861b98368751464ba
     patches:
       - use-external-deps.patch
+      - fix-install-location.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [osx or win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -47,7 +48,7 @@ test:
     - test -f ${PREFIX}/lib/cmake/sdformat/SDFormatConfig.cmake  # [not win]
     - if exist %PREFIX%\\Library\\include\\sdformat-6.2\\sdf\\sdf.hh (exit 0) else (exit 1)  # [win]
     - if exist $PREFIX$\\Library\\lib\\sdformat.lib (exit 0) else (exit 1)  # [win]
-    - if exist $PREFIX$\\Library\\lib\\sdformat.dll (exit 0) else (exit 1)  # [win]
+    - if exist $PREFIX$\\Library\\bin\\sdformat.dll (exit 0) else (exit 1)  # [win]
     - if exist %PREFIX%\\Library\\lib\\cmake\\sdformat\\SDFormatConfig.cmake (exit 0) else (exit 1)  # [win]
 
 about:
