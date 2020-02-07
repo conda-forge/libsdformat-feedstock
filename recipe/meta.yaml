@@ -1,5 +1,5 @@
 {% set name = "libsdformat" %}
-{% set version = "6.2.0" %}
+{% set version = "9.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,13 +7,12 @@ package:
 
 source:
   - url: https://bitbucket.org/osrf/sdformat/get/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
-    sha256: 1920c1dac52f178da2b17b5de094369e21f4ee3f0fbb64d861b98368751464ba
+    sha256: 407599011850143d4de8ca9d5d7370b9f48f2b1d6404d381dfdd4ec23b4e6520
     patches:
-      - use-external-deps.patch
-      - fix-install-location.patch
+      - sdformat.patch
 
 build:
-  number: 3
+  number: 0
   skip: true  # [osx or win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -29,13 +28,13 @@ requirements:
     - cmake
     - pkg-config
   host:
-    - libignition-math4
+    - libignition-math6
     - urdfdom
     - boost-cpp >=1.71
     - tinyxml
     - console_bridge
   run:
-    - libignition-math4
+    - libignition-math6
     - urdfdom
     - boost-cpp >=1.71
     - tinyxml
@@ -43,13 +42,13 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/include/sdformat-6.2/sdf/sdf.hh  # [not win]
-    - test -f ${PREFIX}/lib/libsdformat.so  # [linux]
-    - test -f ${PREFIX}/lib/cmake/sdformat/SDFormatConfig.cmake  # [not win]
-    - if exist %PREFIX%\\Library\\include\\sdformat-6.2\\sdf\\sdf.hh (exit 0) else (exit 1)  # [win]
-    - if exist $PREFIX$\\Library\\lib\\sdformat.lib (exit 0) else (exit 1)  # [win]
-    - if exist $PREFIX$\\Library\\bin\\sdformat.dll (exit 0) else (exit 1)  # [win]
-    - if exist %PREFIX%\\Library\\lib\\cmake\\sdformat\\SDFormatConfig.cmake (exit 0) else (exit 1)  # [win]
+    - test -f ${PREFIX}/include/sdformat-9.1/sdf/sdf.hh  # [not win]
+    - test -f ${PREFIX}/lib/libsdformat9.so  # [linux]
+    - test -f ${PREFIX}/lib/cmake/sdformat9/sdformat9-config.cmake  # [not win]
+    - if not exist %LIBRARY_INC%\\sdformat-9.1\\sdf\\sdf.hh exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\sdformat9.lib exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\\sdformat9.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\cmake\\sdformat9\\sdformat9-config.cmake exit 1  # [win]
 
 about:
   home: http://sdformat.org/
