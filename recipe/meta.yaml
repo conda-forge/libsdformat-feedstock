@@ -1,5 +1,5 @@
 {% set name = "libsdformat" %}
-{% set version = "9.1.0" %}
+{% set version = "9.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   - url: https://bitbucket.org/osrf/sdformat/get/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
-    sha256: 407599011850143d4de8ca9d5d7370b9f48f2b1d6404d381dfdd4ec23b4e6520
+    sha256: fff12c89ba197714cc22eda4933383d21d04f09239b4606703d2256265c83543
     patches:
       - sdformat.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [osx or win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
