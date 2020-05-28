@@ -1,6 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -44,6 +44,8 @@ set (project_cmake_dir ${PROJECT_SOURCE_DIR}/cmake
+@@ -44,6 +44,8 @@
  
  message (STATUS "${PROJECT_NAME} version ${SDF_VERSION_FULL}")
  set (CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE ON)
@@ -9,7 +9,18 @@
  
  #============================================================================
  # We turn off extensions because (1) we do not ever want to use non-standard
-@@ -112,17 +114,6 @@ set (sdf_cmake_dir ${PROJECT_SOURCE_DIR}/cmake CACHE PATH
+@@ -52,7 +54,9 @@
+ # features are requested. Explicitly turning this flag off will force cmake to
+ # choose -std=c++14.
+ # See https://bitbucket.org/ignitionrobotics/ign-cmake/issues/13 for more info.
+-set(CMAKE_CXX_EXTENSIONS off)
++set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD_REQUIRED ON)
++set(CMAKE_CXX_EXTENSIONS OFF)
+ 
+ # Include GNUInstallDirs to get canonical paths
+ include(GNUInstallDirs)
+@@ -112,17 +116,6 @@
  include (${sdf_cmake_dir}/SDFUtils.cmake)
  
  message (STATUS "\n\n====== Finding 3rd Party Packages ======")
