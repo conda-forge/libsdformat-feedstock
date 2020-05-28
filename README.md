@@ -57,17 +57,16 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_ruby2.6" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>win</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
       </details>
+    </td>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td>
+      <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
     </td>
   </tr>
   <tr>
