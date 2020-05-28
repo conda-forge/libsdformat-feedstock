@@ -44,10 +44,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win</td>
+              <td>osx_ruby2.5</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_ruby2.5" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_ruby2.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_ruby2.6" alt="variant">
                 </a>
               </td>
             </tr>
@@ -57,9 +64,9 @@ Current build status
     </td>
   </tr>
   <tr>
-    <td>OSX</td>
+    <td>Windows</td>
     <td>
-      <img src="https://img.shields.io/badge/OSX-disabled-lightgrey.svg" alt="OSX disabled">
+      <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
     </td>
   </tr>
   <tr>
@@ -162,6 +169,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@Tobias-Fischer](https://github.com/Tobias-Fischer/)
 * [@conda-forge/ros-core](https://github.com/conda-forge/ros-core/)
 * [@j-rivero](https://github.com/j-rivero/)
 * [@seanyen](https://github.com/seanyen/)
