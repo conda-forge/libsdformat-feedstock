@@ -1,5 +1,5 @@
 {% set name = "libsdformat" %}
-{% set version = "9.1.0" %}
+{% set version = "9.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   - url: https://bitbucket.org/osrf/sdformat/get/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
-    sha256: 407599011850143d4de8ca9d5d7370b9f48f2b1d6404d381dfdd4ec23b4e6520
+    sha256: fff12c89ba197714cc22eda4933383d21d04f09239b4606703d2256265c83543
     patches:
       - sdformat.patch
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -42,13 +42,13 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/include/sdformat-9.1/sdf/sdf.hh  # [not win]
-    - test -f ${PREFIX}/lib/libsdformat9${SHLIB_EXT}  # [unix]
-    - test -f ${PREFIX}/lib/cmake/sdformat9/sdformat9-config.cmake  # [not win]
-    - if not exist %LIBRARY_INC%\\sdformat-9.1\\sdf\\sdf.hh exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\sdformat9.lib exit 1  # [win]
-    - if not exist %LIBRARY_BIN%\\sdformat9.dll exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\cmake\\sdformat9\\sdformat9-config.cmake exit 1  # [win]
+    - test -f ${PREFIX}/include/sdformat-{{ version.split('.')[0] }}.{{ version.split('.')[1] }}/sdf/sdf.hh  # [not win]
+    - test -f ${PREFIX}/lib/libsdformat{{ version.split('.')[0] }}${SHLIB_EXT}  # [unix]
+    - test -f ${PREFIX}/lib/cmake/sdformat{{ version.split('.')[0] }}/sdformat{{ version.split('.')[0] }}-config.cmake  # [not win]
+    - if not exist %LIBRARY_INC%\\sdformat-{{ version.split('.')[0] }}.{{ version.split('.')[1] }}\\sdf\\sdf.hh exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\sdformat{{ version.split('.')[0] }}.lib exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\\sdformat{{ version.split('.')[0] }}.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\cmake\\sdformat{{ version.split('.')[0] }}\\sdformat{{ version.split('.')[0] }}-config.cmake exit 1  # [win]
 
 about:
   home: http://sdformat.org/
