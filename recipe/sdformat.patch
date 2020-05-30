@@ -41,18 +41,7 @@
 
 --- a/cmake/SDFUtils.cmake
 +++ b/cmake/SDFUtils.cmake
-@@ -79,7 +79,9 @@ macro (sdf_install_library _name)
-   install (
-     TARGETS ${_name}
-     EXPORT ${_name}
--    DESTINATION ${LIB_INSTALL_DIR}
-+    ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
-+    LIBRARY DESTINATION ${LIB_INSTALL_DIR}
-+    RUNTIME DESTINATION ${BIN_INSTALL_DIR}
-     COMPONENT shlib)
- 
- # Export and install target
-@@ -141,10 +143,6 @@ macro (sdf_build_tests)
+@@ -143,10 +143,6 @@
        add_executable(${BINARY_NAME}
          ${GTEST_SOURCE_file}
          ${SDF_BUILD_TESTS_EXTRA_EXE_SRCS}
@@ -63,7 +52,7 @@
        )
      else()
        message(FATAL_ERROR "Unsupported platform")
-@@ -164,12 +162,14 @@ macro (sdf_build_tests)
+@@ -166,12 +162,14 @@
          pthread
          ${tinyxml_LIBRARIES}
          ${IGNITION-MATH_LIBRARIES}
@@ -81,20 +70,7 @@
 
 --- a/cmake/SearchForStuff.cmake
 +++ b/cmake/SearchForStuff.cmake
-@@ -11,10 +11,10 @@ if (USE_EXTERNAL_TINYXML)
-   # Use pkg_check_modules and fallback to manual detection (needed, at least, for MacOS)
-   pkg_check_modules(tinyxml tinyxml)
-   if (NOT tinyxml_FOUND)
--    find_path (tinyxml_include_dirs tinyxml.h ${tinyxml_include_dirs} ENV CPATH)
-+    find_path (tinyxml_INCLUDE_DIRS tinyxml.h ${tinyxml_INCLUDE_DIRS} ENV CPATH)
-     find_library(tinyxml_LIBRARIES NAMES tinyxml)
-     set (tinyxml_FAIL False)
--    if (NOT tinyxml_include_dirs)
-+    if (NOT tinyxml_INCLUDE_DIRS)
-       message (STATUS "Looking for tinyxml headers - not found")
-       set (tinyxml_FAIL True)
-     endif()
-@@ -54,7 +54,7 @@ endif()
+@@ -54,7 +54,7 @@
  
  if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
    # check for urdfdom with pkg-config
@@ -103,7 +79,7 @@
  
    if (NOT URDF_FOUND)
      if (NOT DEFINED USE_INTERNAL_URDF)
-@@ -63,10 +63,6 @@ if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
+@@ -63,10 +63,6 @@
      else()
        BUILD_ERROR("Couldn't find the urdfdom >= 1.0 system installation")
      endif()
@@ -113,11 +89,10 @@
 -    set(URDF_LIBRARY_DIRS ${URDF_LIBDIR})
    endif()
  endif()
- 
 
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -177,7 +177,11 @@ message (STATUS "URDF_LIBRARY_DIRS=${URDF_LIBRARY_DIRS}")
+@@ -183,7 +183,11 @@
  message (STATUS "URDF_LIBRARIES=${URDF_LIBRARIES}")
  
  if (NOT USE_INTERNAL_URDF)
@@ -130,3 +105,4 @@
  endif()
  
  sdf_install_library(${sdf_target})
+
