@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
+  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -42,13 +42,13 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/include/sdformat-9.1/sdf/sdf.hh  # [not win]
-    - test -f ${PREFIX}/lib/libsdformat9${SHLIB_EXT}  # [unix]
-    - test -f ${PREFIX}/lib/cmake/sdformat9/sdformat9-config.cmake  # [not win]
-    - if not exist %LIBRARY_INC%\\sdformat-9.1\\sdf\\sdf.hh exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\sdformat9.lib exit 1  # [win]
-    - if not exist %LIBRARY_BIN%\\sdformat9.dll exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\cmake\\sdformat9\\sdformat9-config.cmake exit 1  # [win]
+    - test -f ${PREFIX}/include/sdformat-{{ version.split('.')[0] }}.{{ version.split('.')[1] }}/sdf/sdf.hh  # [not win]
+    - test -f ${PREFIX}/lib/libsdformat{{ version.split('.')[0] }}${SHLIB_EXT}  # [unix]
+    - test -f ${PREFIX}/lib/cmake/sdformat{{ version.split('.')[0] }}/sdformat{{ version.split('.')[0] }}-config.cmake  # [not win]
+    - if not exist %LIBRARY_INC%\\sdformat-{{ version.split('.')[0] }}.{{ version.split('.')[1] }}\\sdf\\sdf.hh exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\sdformat{{ version.split('.')[0] }}.lib exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\\sdformat{{ version.split('.')[0] }}.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\cmake\\sdformat{{ version.split('.')[0] }}\\sdformat{{ version.split('.')[0] }}-config.cmake exit 1  # [win]
 
 about:
   home: http://sdformat.org/
