@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
-    sha256: 1920c1dac52f178da2b17b5de094369e21f4ee3f0fbb64d861b98368751464ba
+    sha256: 88d0fe2fcf27842f33d60e087e9142312c0392d55dfb250f2a66e66d55eb40dd
     patches:
       - use-external-deps.patch
       - fix-install-location.patch
