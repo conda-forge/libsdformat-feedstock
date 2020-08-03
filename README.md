@@ -57,13 +57,6 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_64_ruby2.6" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
