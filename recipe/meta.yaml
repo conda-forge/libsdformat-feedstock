@@ -6,15 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://bitbucket.org/osrf/sdformat/get/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
-    sha256: 1920c1dac52f178da2b17b5de094369e21f4ee3f0fbb64d861b98368751464ba
+  - url: https://github.com/osrf/sdformat/archive/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
+    sha256: 88d0fe2fcf27842f33d60e087e9142312c0392d55dfb250f2a66e66d55eb40dd
     patches:
       - use-external-deps.patch
       - fix-install-location.patch
 
 build:
-  number: 3
-  skip: true  # [osx or win and vc<14]
+  number: 4
+  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -31,15 +31,14 @@ requirements:
   host:
     - libignition-math4
     - urdfdom
-    - boost-cpp >=1.71
+    - boost-cpp >=1.72
     - tinyxml
-    - console_bridge
+    - console_bridge 1.0.*
   run:
     - libignition-math4
     - urdfdom
-    - boost-cpp >=1.71
     - tinyxml
-    - console_bridge
+    - console_bridge 1.0.*
 
 test:
   commands:
