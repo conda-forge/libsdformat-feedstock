@@ -5,14 +5,20 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-10.14
+    vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_ruby2.5:
-        CONFIG: osx_ruby2.5
+      osx_64_boost_cpp1.72.0ruby2.5:
+        CONFIG: osx_64_boost_cpp1.72.0ruby2.5
         UPLOAD_PACKAGES: 'True'
-      osx_ruby2.6:
-        CONFIG: osx_ruby2.6
+      osx_64_boost_cpp1.72.0ruby2.6:
+        CONFIG: osx_64_boost_cpp1.72.0ruby2.6
+        UPLOAD_PACKAGES: 'True'
+      osx_64_boost_cpp1.74.0ruby2.5:
+        CONFIG: osx_64_boost_cpp1.74.0ruby2.5
+        UPLOAD_PACKAGES: 'True'
+      osx_64_boost_cpp1.74.0ruby2.6:
+        CONFIG: osx_64_boost_cpp1.74.0ruby2.6
         UPLOAD_PACKAGES: 'True'
     maxParallel: 8
   timeoutInMinutes: 360
@@ -23,6 +29,7 @@ jobs:
       export CI=azure
       export OSX_FORCE_SDK_DOWNLOAD="1"
       export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+      export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
       ./.scripts/run_osx_build.sh
     displayName: Run OSX build
     env:
