@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://bitbucket.org/osrf/sdformat/get/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
-    sha256: fff12c89ba197714cc22eda4933383d21d04f09239b4606703d2256265c83543
+  - url: https://github.com/osrf/sdformat/archive/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
+    sha256: 0e42001d92aa2c089c7d0c4ea6a30db2beeff0af3a9a357e7ccd0a4e1131cae7
     patches:
       - sdformat.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
