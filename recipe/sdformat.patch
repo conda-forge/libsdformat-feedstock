@@ -1,6 +1,8 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3e5264c3..9265c482 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -44,6 +44,8 @@
+@@ -44,6 +44,8 @@ set (project_cmake_dir ${PROJECT_SOURCE_DIR}/cmake
  
  message (STATUS "${PROJECT_NAME} version ${SDF_VERSION_FULL}")
  set (CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE ON)
@@ -9,18 +11,17 @@
  
  #============================================================================
  # We turn off extensions because (1) we do not ever want to use non-standard
-@@ -52,7 +54,9 @@
- # features are requested. Explicitly turning this flag off will force cmake to
+@@ -53,6 +55,9 @@ set (CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE ON)
  # choose -std=c++14.
- # See https://bitbucket.org/ignitionrobotics/ign-cmake/issues/13 for more info.
--set(CMAKE_CXX_EXTENSIONS off)
+ # See https://github.com/ignitionrobotics/ign-cmake/issues/13 for more info.
+ set(CMAKE_CXX_EXTENSIONS off)
 +set(CMAKE_CXX_STANDARD 17)
 +set(CMAKE_CXX_STANDARD_REQUIRED ON)
 +set(CMAKE_CXX_EXTENSIONS OFF)
  
  # Include GNUInstallDirs to get canonical paths
  include(GNUInstallDirs)
-@@ -112,17 +116,6 @@
+@@ -112,17 +117,6 @@ set (sdf_cmake_dir ${PROJECT_SOURCE_DIR}/cmake CACHE PATH
  include (${sdf_cmake_dir}/SDFUtils.cmake)
  
  message (STATUS "\n\n====== Finding 3rd Party Packages ======")
@@ -38,10 +39,11 @@
  include (${sdf_cmake_dir}/SearchForStuff.cmake)
  message (STATUS "----------------------------------------\n")
  
-
+diff --git a/cmake/SDFUtils.cmake b/cmake/SDFUtils.cmake
+index df9931de..43f927e1 100644
 --- a/cmake/SDFUtils.cmake
 +++ b/cmake/SDFUtils.cmake
-@@ -143,10 +143,6 @@
+@@ -143,10 +143,6 @@ macro (sdf_build_tests)
        add_executable(${BINARY_NAME}
          ${GTEST_SOURCE_file}
          ${SDF_BUILD_TESTS_EXTRA_EXE_SRCS}
@@ -52,7 +54,7 @@
        )
      else()
        message(FATAL_ERROR "Unsupported platform")
-@@ -166,12 +162,14 @@
+@@ -166,12 +162,14 @@ macro (sdf_build_tests)
          pthread
          ${tinyxml_LIBRARIES}
          ${IGNITION-MATH_LIBRARIES}
@@ -67,10 +69,11 @@
          ${IGNITION-MATH_LIBRARIES}
        )
  
-
+diff --git a/cmake/SearchForStuff.cmake b/cmake/SearchForStuff.cmake
+index 427e5e7a..3ee40616 100644
 --- a/cmake/SearchForStuff.cmake
 +++ b/cmake/SearchForStuff.cmake
-@@ -54,7 +54,7 @@
+@@ -54,7 +54,7 @@ endif()
  
  if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
    # check for urdfdom with pkg-config
@@ -78,8 +81,8 @@
 +  pkg_check_modules(URDF urdfdom>=1.0 IMPORTED_TARGET)
  
    if (NOT URDF_FOUND)
-     if (NOT DEFINED USE_INTERNAL_URDF)
-@@ -63,10 +63,6 @@
+     find_package(urdfdom)
+@@ -69,10 +69,6 @@ if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
      else()
        BUILD_ERROR("Couldn't find the urdfdom >= 1.0 system installation")
      endif()
@@ -89,13 +92,15 @@
 -    set(URDF_LIBRARY_DIRS ${URDF_LIBDIR})
    endif()
  endif()
-
+ 
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index c283a00a..439a26b8 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -183,7 +183,11 @@
- message (STATUS "URDF_LIBRARIES=${URDF_LIBRARIES}")
- 
- if (NOT USE_INTERNAL_URDF)
+@@ -190,7 +190,11 @@ if (NOT USE_INTERNAL_URDF)
+   if (${CMAKE_VERSION} VERSION_GREATER 3.13)
+     target_link_options(${sdf_target} PRIVATE ${URDF_LDFLAGS})
+   endif()
 -  target_link_libraries(${sdf_target} PRIVATE ${URDF_LIBRARIES})
 +  if (TARGET PkgConfig::URDF)
 +    target_link_libraries(${sdf_target} PRIVATE PkgConfig::URDF)
