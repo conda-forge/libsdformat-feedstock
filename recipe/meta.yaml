@@ -31,13 +31,13 @@ requirements:
     - libignition-math6
     - urdfdom
     - boost-cpp
-    - tinyxml
+    - tinyxml2
     - console_bridge
   run:
     - libignition-math6
     - urdfdom
     - boost-cpp
-    - tinyxml
+    - tinyxml2
     - console_bridge
 
 test:
