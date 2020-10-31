@@ -12,8 +12,8 @@ source:
       - sdformat.patch
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
+  skip: false
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -25,6 +25,7 @@ requirements:
     - vs2017_win-32                      # [win32]
     - ninja                              # [not win]
     - ruby                               # [not win]
+    - ruby 2.7                           # [win]
     - cmake
     - pkg-config
   host:
