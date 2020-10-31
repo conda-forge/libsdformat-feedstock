@@ -7,7 +7,5 @@ channel_targets:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-ruby:
-- '2.6'
 target_platform:
 - win-64

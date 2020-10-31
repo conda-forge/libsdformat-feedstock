@@ -84,31 +84,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_boost_cpp1.72.0ruby2.5</td>
+              <td>win_64_boost_cpp1.72.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_boost_cpp1.72.0ruby2.5" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_boost_cpp1.72.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_boost_cpp1.72.0ruby2.6</td>
+              <td>win_64_boost_cpp1.74.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_boost_cpp1.72.0ruby2.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_boost_cpp1.74.0ruby2.5</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_boost_cpp1.74.0ruby2.5" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_boost_cpp1.74.0ruby2.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_boost_cpp1.74.0ruby2.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_boost_cpp1.74.0" alt="variant">
                 </a>
               </td>
             </tr>
