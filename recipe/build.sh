@@ -19,4 +19,4 @@ cmake .. \
 
 cmake --build . --config Release -- -j$CPU_COUNT
 cmake --build . --config Release --target install
-ctest -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION"
+ctest  --output-on-failure -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION"

@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 3e5264c3..9265c482 100644
+index d39d68f5..68d627a9 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -44,6 +44,8 @@ set (project_cmake_dir ${PROJECT_SOURCE_DIR}/cmake
@@ -11,69 +11,32 @@ index 3e5264c3..9265c482 100644
  
  #============================================================================
  # We turn off extensions because (1) we do not ever want to use non-standard
-@@ -53,6 +55,9 @@ set (CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE ON)
+@@ -53,6 +55,8 @@ set (CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE ON)
  # choose -std=c++14.
  # See https://github.com/ignitionrobotics/ign-cmake/issues/13 for more info.
  set(CMAKE_CXX_EXTENSIONS off)
 +set(CMAKE_CXX_STANDARD 17)
 +set(CMAKE_CXX_STANDARD_REQUIRED ON)
-+set(CMAKE_CXX_EXTENSIONS OFF)
  
  # Include GNUInstallDirs to get canonical paths
  include(GNUInstallDirs)
-@@ -112,17 +117,6 @@ set (sdf_cmake_dir ${PROJECT_SOURCE_DIR}/cmake CACHE PATH
- include (${sdf_cmake_dir}/SDFUtils.cmake)
- 
- message (STATUS "\n\n====== Finding 3rd Party Packages ======")
-- # Use of tinyxml. System installation on UNIX. Internal copy on WIN
--if (UNIX)
--  message (STATUS "Using system tinyxml")
--  set (USE_EXTERNAL_TINYXML True)
--elseif(WIN32)
--  message (STATUS "Using internal tinyxml code")
--  set (USE_EXTERNAL_TINYXML False)
--else()
--  message (STATUS "Unknown platform")
--  BUILD_ERROR("Unknown platform")
--endif()
- include (${sdf_cmake_dir}/SearchForStuff.cmake)
- message (STATUS "----------------------------------------\n")
- 
 diff --git a/cmake/SDFUtils.cmake b/cmake/SDFUtils.cmake
-index df9931de..43f927e1 100644
+index 525c4d4c..6f7b23f2 100644
 --- a/cmake/SDFUtils.cmake
 +++ b/cmake/SDFUtils.cmake
-@@ -143,10 +143,6 @@ macro (sdf_build_tests)
-       add_executable(${BINARY_NAME}
-         ${GTEST_SOURCE_file}
-         ${SDF_BUILD_TESTS_EXTRA_EXE_SRCS}
--        ${PROJECT_SOURCE_DIR}/src/win/tinyxml/tinystr.cpp
--        ${PROJECT_SOURCE_DIR}/src/win/tinyxml/tinyxmlerror.cpp
--        ${PROJECT_SOURCE_DIR}/src/win/tinyxml/tinyxml.cpp
--        ${PROJECT_SOURCE_DIR}/src/win/tinyxml/tinyxmlparser.cpp
-       )
-     else()
-       message(FATAL_ERROR "Unsupported platform")
-@@ -166,12 +162,14 @@ macro (sdf_build_tests)
+@@ -154,6 +154,7 @@ macro (sdf_build_tests)
+         ${sdf_target}
          pthread
-         ${tinyxml_LIBRARIES}
          ${IGNITION-MATH_LIBRARIES}
 +        PkgConfig::URDF
        )
      elseif(WIN32)
-       target_link_libraries(${BINARY_NAME}
-         gtest.lib
-         gtest_main.lib
-         ${sdf_target}
-+        ${tinyxml_LIBRARIES}
-         ${IGNITION-MATH_LIBRARIES}
-       )
- 
+       target_link_libraries(${BINARY_NAME} PRIVATE
 diff --git a/cmake/SearchForStuff.cmake b/cmake/SearchForStuff.cmake
-index 427e5e7a..3ee40616 100644
+index a6c66195..6908c68f 100644
 --- a/cmake/SearchForStuff.cmake
 +++ b/cmake/SearchForStuff.cmake
-@@ -54,7 +54,7 @@ endif()
+@@ -28,7 +28,7 @@ endif()
  
  if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
    # check for urdfdom with pkg-config
@@ -82,7 +45,7 @@ index 427e5e7a..3ee40616 100644
  
    if (NOT URDF_FOUND)
      find_package(urdfdom)
-@@ -69,10 +69,6 @@ if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
+@@ -43,10 +43,6 @@ if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
      else()
        BUILD_ERROR("Couldn't find the urdfdom >= 1.0 system installation")
      endif()
@@ -94,10 +57,10 @@ index 427e5e7a..3ee40616 100644
  endif()
  
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index c283a00a..439a26b8 100644
+index 5df95ae3..a5534aaf 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -190,7 +190,11 @@ if (NOT USE_INTERNAL_URDF)
+@@ -197,7 +197,11 @@ if (NOT USE_INTERNAL_URDF)
    if (${CMAKE_VERSION} VERSION_GREATER 3.13)
      target_link_options(${sdf_target} PRIVATE ${URDF_LDFLAGS})
    endif()
@@ -110,4 +73,3 @@ index c283a00a..439a26b8 100644
  endif()
  
  sdf_install_library(${sdf_target})
-
