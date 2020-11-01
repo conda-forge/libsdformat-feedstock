@@ -12,6 +12,7 @@ source:
     sha256: 3555ce443a736e9bd24577d894978e0236212bfd2b356022fd53b143b30152bf
     patches:
       - sdformat.patch
+      - skipPoseNoValueTest.patch  # [osx]
 
 build:
   number: 0
