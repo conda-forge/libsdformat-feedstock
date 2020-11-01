@@ -1,12 +1,14 @@
-{% set name = "libsdformat" %}
+{% set base_name = "libsdformat" %}
 {% set version = "10.0.0" %}
+{% set major_version = version.split('.')[0] %}
+{% set name = base_name + major_version %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  - url: https://github.com/osrf/sdformat/archive/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
+  - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
     sha256: 3555ce443a736e9bd24577d894978e0236212bfd2b356022fd53b143b30152bf
     patches:
       - sdformat.patch
@@ -15,7 +17,7 @@ build:
   number: 0
   skip: true  # [win]
   run_exports:
-    - {{ pin_subpackage(name, max_pin='x.x') }}
+    - {{ pin_subpackage(name, min_pin='x.x' max_pin='x') }}
 
 requirements:
   build:
