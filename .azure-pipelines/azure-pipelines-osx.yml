@@ -20,7 +20,6 @@ jobs:
       osx_64_boost_cpp1.74.0ruby2.6:
         CONFIG: osx_64_boost_cpp1.74.0ruby2.6
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 8
   timeoutInMinutes: 360
 
   steps:
