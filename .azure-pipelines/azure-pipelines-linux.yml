@@ -8,22 +8,14 @@ jobs:
     vmImage: ubuntu-16.04
   strategy:
     matrix:
-      linux_64_boost_cpp1.72.0ruby2.5:
-        CONFIG: linux_64_boost_cpp1.72.0ruby2.5
+      linux_64_ruby2.5:
+        CONFIG: linux_64_ruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_boost_cpp1.72.0ruby2.6:
-        CONFIG: linux_64_boost_cpp1.72.0ruby2.6
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_ruby2.6:
+        CONFIG: linux_64_ruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_boost_cpp1.74.0ruby2.5:
-        CONFIG: linux_64_boost_cpp1.74.0ruby2.5
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_boost_cpp1.74.0ruby2.6:
-        CONFIG: linux_64_boost_cpp1.74.0ruby2.6
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
 
   steps:
