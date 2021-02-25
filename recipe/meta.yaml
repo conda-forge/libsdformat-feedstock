@@ -68,3 +68,4 @@ extra:
     - j-rivero
     - conda-forge/ros-core
     - Tobias-Fischer
+    - traversaro
