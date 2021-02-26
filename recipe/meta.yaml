@@ -15,7 +15,7 @@ source:
       - skipPoseNoValueTest.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   skip: false
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
@@ -43,6 +43,7 @@ requirements:
     - boost-cpp
     - tinyxml2
     - console_bridge
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
@@ -67,3 +68,4 @@ extra:
     - j-rivero
     - conda-forge/ros-core
     - Tobias-Fischer
+    - traversaro
