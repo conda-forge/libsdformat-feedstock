@@ -15,7 +15,7 @@ source:
       - skipPoseNoValueTest.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   skip: false
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
@@ -34,7 +34,7 @@ requirements:
     - libignition-math6
     - libignition-tools1
     - libignition-utils1
-    - urdfdom
+    - urdfdom {{ urdfdom }}
     - tinyxml2
     - console_bridge
   run:
