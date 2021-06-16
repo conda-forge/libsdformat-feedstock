@@ -20,9 +20,11 @@ pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
 ruby:
-- '2.6'
+- '2.5'
 target_platform:
 - linux-ppc64le
+urdfdom:
+- '1'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
