@@ -42,66 +42,129 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_ruby2.5</td>
+              <td>linux_64_ruby2.5urdfdom1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_64_ruby2.5" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_64_ruby2.5urdfdom1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_ruby2.6</td>
+              <td>linux_64_ruby2.5urdfdom2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_64_ruby2.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_64_ruby2.5urdfdom2" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_ruby2.5</td>
+              <td>linux_64_ruby2.6urdfdom1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ruby2.5" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_64_ruby2.6urdfdom1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_ruby2.6</td>
+              <td>linux_64_ruby2.6urdfdom2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ruby2.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_64_ruby2.6urdfdom2" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_ruby2.5</td>
+              <td>linux_aarch64_ruby2.5urdfdom1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ruby2.5" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ruby2.5urdfdom1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_ruby2.6</td>
+              <td>linux_aarch64_ruby2.5urdfdom2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ruby2.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ruby2.5urdfdom2" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_ruby2.5</td>
+              <td>linux_aarch64_ruby2.6urdfdom1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_64_ruby2.5" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ruby2.6urdfdom1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_ruby2.6</td>
+              <td>linux_aarch64_ruby2.6urdfdom2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_64_ruby2.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ruby2.6urdfdom2" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>linux_ppc64le_ruby2.5urdfdom1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ruby2.5urdfdom1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_ruby2.5urdfdom2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ruby2.5urdfdom2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_ruby2.6urdfdom1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ruby2.6urdfdom1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_ruby2.6urdfdom2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ruby2.6urdfdom2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_ruby2.5urdfdom1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_64_ruby2.5urdfdom1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_ruby2.5urdfdom2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_64_ruby2.5urdfdom2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_ruby2.6urdfdom1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_64_ruby2.6urdfdom1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_ruby2.6urdfdom2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=osx&configuration=osx_64_ruby2.6urdfdom2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_urdfdom1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_urdfdom1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_urdfdom2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsdformat-feedstock?branchName=master&jobName=win&configuration=win_64_urdfdom2" alt="variant">
                 </a>
               </td>
             </tr>
@@ -126,6 +189,7 @@ Installing `libsdformat` from the `conda-forge` channel can be achieved by addin
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `libsdformat` can be installed with:
@@ -208,4 +272,5 @@ Feedstock Maintainers
 * [@conda-forge/ros-core](https://github.com/conda-forge/ros-core/)
 * [@j-rivero](https://github.com/j-rivero/)
 * [@seanyen](https://github.com/seanyen/)
+* [@traversaro](https://github.com/traversaro/)
 
