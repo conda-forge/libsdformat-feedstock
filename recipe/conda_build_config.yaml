@@ -2,3 +2,7 @@ macos_min_version:             # [osx]
   - 10.14                      # [osx]
 MACOSX_DEPLOYMENT_TARGET:      # [osx]
   - 10.14                      # [osx]
+
+urdfdom:
+  - 1
+  - 2
