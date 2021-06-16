@@ -12,7 +12,7 @@ source:
       - sdformat.patch
 
 build:
-  number: 2
+  number: 3
   skip: false
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
@@ -30,7 +30,7 @@ requirements:
     - pkg-config
   host:
     - libignition-math6
-    - urdfdom
+    - urdfdom {{ urdfdom }}
     - boost-cpp
     - tinyxml
     - console_bridge
