@@ -5,15 +5,23 @@
 jobs:
 - job: linux
   pool:
-    vmImage: ubuntu-16.04
+    vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_ruby2.5:
-        CONFIG: linux_64_ruby2.5
+      linux_64_ruby2.5urdfdom1:
+        CONFIG: linux_64_ruby2.5urdfdom1
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_ruby2.6:
-        CONFIG: linux_64_ruby2.6
+      linux_64_ruby2.5urdfdom2:
+        CONFIG: linux_64_ruby2.5urdfdom2
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_ruby2.6urdfdom1:
+        CONFIG: linux_64_ruby2.6urdfdom1
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_ruby2.6urdfdom2:
+        CONFIG: linux_64_ruby2.6urdfdom2
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
