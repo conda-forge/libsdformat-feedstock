@@ -126,6 +126,7 @@ Installing `libsdformat` from the `conda-forge` channel can be achieved by addin
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `libsdformat` can be installed with:
@@ -208,4 +209,5 @@ Feedstock Maintainers
 * [@conda-forge/ros-core](https://github.com/conda-forge/ros-core/)
 * [@j-rivero](https://github.com/j-rivero/)
 * [@seanyen](https://github.com/seanyen/)
+* [@traversaro](https://github.com/traversaro/)
 
