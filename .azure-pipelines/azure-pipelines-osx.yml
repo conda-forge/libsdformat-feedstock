@@ -14,6 +14,12 @@ jobs:
       osx_64_ruby2.6:
         CONFIG: osx_64_ruby2.6
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_ruby2.5:
+        CONFIG: osx_arm64_ruby2.5
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_ruby2.6:
+        CONFIG: osx_arm64_ruby2.6
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:
