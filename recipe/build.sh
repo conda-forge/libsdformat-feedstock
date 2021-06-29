@@ -22,7 +22,8 @@ cmake ${CMAKE_ARGS} .. \
       -DUSE_EXTERNAL_TINYXML=ON \
       -DUSE_INTERNAL_URDF=OFF \
       -DBUILD_TESTING=$BUILD_TESTING \
-      -DCMAKE_VERBOSE_MAKEFILE=ON
+      -DCMAKE_VERBOSE_MAKEFILE=ON \
+      -DRUBY=$BUILD_PREFIX/bin/ruby
 
 cmake --build . --config Release -- -j$CPU_COUNT
 cmake --build . --config Release --target install
