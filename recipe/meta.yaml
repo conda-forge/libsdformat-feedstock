@@ -1,5 +1,5 @@
 {% set base_name = "libsdformat" %}
-{% set version = "11.2.0" %}
+{% set version = "11.2.1" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,13 +9,13 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
-    sha256: f0cf62fcd4309d5d62d47148ab01fee034d4f088f1b897cd694c8c75649488da
+    sha256: 3f0665a910ba12182b18e055651a48fee5dde7f9645ce08f1cd2d6e09033a7f2
     patches:
       - sdformat.patch
       - skipPoseNoValueTest.patch  # [osx]
 
 build:
-  number: 1
+  number: 0
   skip: false
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
