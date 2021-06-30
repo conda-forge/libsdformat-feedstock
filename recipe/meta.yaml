@@ -12,8 +12,7 @@ source:
       - sdformat.patch
 
 build:
-  number: 4
-  skip: false
+  number: 5
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -35,11 +34,6 @@ requirements:
     - tinyxml
     - console_bridge
   run:
-    - libignition-math6
-    - urdfdom
-    - boost-cpp
-    - tinyxml
-    - console_bridge
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
