@@ -3,7 +3,13 @@
 mkdir build
 cd build
 
-cmake .. \
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+BUILD_TESTING=ON
+else
+BUILD_TESTING=OFF
+fi
+
+cmake ${CMAKE_ARGS} .. \
       -G "Ninja" \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_INSTALL_PREFIX=$PREFIX \
@@ -15,8 +21,12 @@ cmake .. \
       -DBoost_DEBUG=ON \
       -DUSE_EXTERNAL_TINYXML=ON \
       -DUSE_INTERNAL_URDF=OFF \
-      -DCMAKE_VERBOSE_MAKEFILE=ON
+      -DBUILD_TESTING=$BUILD_TESTING \
+      -DCMAKE_VERBOSE_MAKEFILE=ON \
+      -DRUBY=$BUILD_PREFIX/bin/ruby
 
 cmake --build . --config Release -- -j$CPU_COUNT
 cmake --build . --config Release --target install
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 ctest  --output-on-failure -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION"
+fi
