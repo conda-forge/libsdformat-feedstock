@@ -28,7 +28,6 @@ requirements:
   host:
     - libignition-math6
     - urdfdom
-    - boost-cpp
     - tinyxml
     - console_bridge
   run:
