@@ -23,5 +23,3 @@ tinyxml2:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - cdt_name
-  - docker_image
