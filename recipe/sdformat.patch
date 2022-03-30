@@ -56,20 +56,3 @@ index a6c66195..6908c68f 100644
    endif()
  endif()
  
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 5df95ae3..a5534aaf 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -197,7 +197,11 @@ if (NOT USE_INTERNAL_URDF)
-   if (${CMAKE_VERSION} VERSION_GREATER 3.13)
-     target_link_options(${sdf_target} PRIVATE ${URDF_LDFLAGS})
-   endif()
--  target_link_libraries(${sdf_target} PRIVATE ${URDF_LIBRARIES})
-+  if (TARGET PkgConfig::URDF)
-+    target_link_libraries(${sdf_target} PRIVATE PkgConfig::URDF)
-+  else()
-+    target_link_libraries(${sdf_target} PRIVATE ${URDF_LIBRARIES})
-+  endif()
- endif()
- 
- sdf_install_library(${sdf_target})
