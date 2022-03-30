@@ -11,7 +11,6 @@ source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
     sha256: 1feaa2c8867f3dbb3ddc9de34218a27cda0b881432057744b9ef12d4f26604b4
     patches:
-      - sdformat.patch
       - skipPoseNoValueTest.patch  # [osx]
 
 build:
