@@ -33,6 +33,7 @@ requirements:
     - libignition-math6
     - libignition-tools1
     - libignition-utils1
+    - libignition-common4
     - urdfdom
     - tinyxml2
   run:
