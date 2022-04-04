@@ -14,10 +14,7 @@ cmake ^
     -DBoost_DEBUG=ON ^
     -DUSE_EXTERNAL_TINYXML=ON ^
     -DUSE_INTERNAL_URDF=OFF ^
-    -DURDF_FOUND=ON ^
-    -DURDF_INCLUDEDIR=%LIBRARY_PREFIX%\include ^
-    -DURDF_LIBDIR=%LIBRARY_PREFIX%\lib ^
-    "-DURDF_LIBRARIES=urdfdom_sensor;urdfdom_model_state;urdfdom_model;urdfdom_world" ^
+    -DSKIP_usd=true ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
