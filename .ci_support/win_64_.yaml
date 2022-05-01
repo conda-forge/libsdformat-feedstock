@@ -1,11 +1,10 @@
-boost_cpp:
-- 1.74.0
+c_compiler:
+- vs2017
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
-pin_run_as_build:
-  boost-cpp:
-    max_pin: x.x.x
+cxx_compiler:
+- vs2017
 target_platform:
 - win-64
