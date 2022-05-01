@@ -1,5 +1,5 @@
 {% set name = "libsdformat" %}
-{% set version = "9.3.0" %}
+{% set version = "9.8.0" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,7 @@ source:
       - sdformat.patch
 
 build:
-  number: 5
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
