@@ -1,4 +1,4 @@
-About libsdformat12
+About libsdformat13
 ===================
 
 Home: http://sdformat.org/
@@ -117,53 +117,53 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libsdformat12-green.svg)](https://anaconda.org/conda-forge/libsdformat12) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsdformat12.svg)](https://anaconda.org/conda-forge/libsdformat12) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsdformat12.svg)](https://anaconda.org/conda-forge/libsdformat12) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsdformat12.svg)](https://anaconda.org/conda-forge/libsdformat12) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libsdformat13-green.svg)](https://anaconda.org/conda-forge/libsdformat13) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsdformat13.svg)](https://anaconda.org/conda-forge/libsdformat13) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsdformat13.svg)](https://anaconda.org/conda-forge/libsdformat13) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsdformat13.svg)](https://anaconda.org/conda-forge/libsdformat13) |
 
-Installing libsdformat12
+Installing libsdformat13
 ========================
 
-Installing `libsdformat12` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libsdformat13` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libsdformat12` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libsdformat13` can be installed with `conda`:
 
 ```
-conda install libsdformat12
-```
-
-or with `mamba`:
-
-```
-mamba install libsdformat12
-```
-
-It is possible to list all of the versions of `libsdformat12` available on your platform with `conda`:
-
-```
-conda search libsdformat12 --channel conda-forge
+conda install libsdformat13
 ```
 
 or with `mamba`:
 
 ```
-mamba search libsdformat12 --channel conda-forge
+mamba install libsdformat13
+```
+
+It is possible to list all of the versions of `libsdformat13` available on your platform with `conda`:
+
+```
+conda search libsdformat13 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search libsdformat13 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libsdformat12 --channel conda-forge
+mamba repoquery search libsdformat13 --channel conda-forge
 
-# List packages depending on `libsdformat12`:
-mamba repoquery whoneeds libsdformat12 --channel conda-forge
+# List packages depending on `libsdformat13`:
+mamba repoquery whoneeds libsdformat13 --channel conda-forge
 
-# List dependencies of `libsdformat12`:
-mamba repoquery depends libsdformat12 --channel conda-forge
+# List dependencies of `libsdformat13`:
+mamba repoquery depends libsdformat13 --channel conda-forge
 ```
 
 
@@ -208,17 +208,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating libsdformat12-feedstock
+Updating libsdformat13-feedstock
 ================================
 
-If you would like to improve the libsdformat12 recipe or build a new
+If you would like to improve the libsdformat13 recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/libsdformat12-feedstock are
+Note that all branches in the conda-forge/libsdformat13-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
