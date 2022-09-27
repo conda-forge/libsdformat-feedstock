@@ -29,11 +29,10 @@ requirements:
     - cmake
     - pkg-config
   host:
-    - libignition-cmake2
-    - libignition-math6
-    - libignition-tools1
-    - libignition-utils1
-    - libignition-common4
+    - gz-cmake3
+    - gz-math7
+    - gz-tools2
+    - gz-utils2
     - urdfdom
     - tinyxml2
   run:
