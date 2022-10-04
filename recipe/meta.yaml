@@ -29,10 +29,10 @@ requirements:
     - cmake
     - pkg-config
   host:
-    - gz-cmake3
-    - gz-math7
-    - gz-tools2
-    - gz-utils2
+    - libgz-cmake3
+    - libgz-math7
+    - libgz-tools2
+    - libgz-utils2
     - urdfdom
     - tinyxml2
   run:
