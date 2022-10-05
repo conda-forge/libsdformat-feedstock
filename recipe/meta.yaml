@@ -10,8 +10,6 @@ package:
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
     sha256: 87027e1cab8bc88160cbf1437c8e7f1604f38a0400799d553ab1b47804abcad6
-    patches:
-      - skipPoseNoValueTest.patch  # [osx]
 
 build:
   number: 0
