@@ -32,7 +32,6 @@ requirements:
     - libgz-utils2
     - urdfdom
     - tinyxml2
-    - sed
 
 test:
   commands:
