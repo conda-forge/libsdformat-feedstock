@@ -9,6 +9,15 @@ else
 BUILD_TESTING=OFF
 fi
 
+if [[ "${target_platform}" == osx-* ]]; then
+    # See https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
+    CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+fi
+
+# Patch on the fly gz to handle the tests
+sed "s|libgz-tools2-backward.so|$CONDA_PREFIX/lib/libgz-tools2-backward.so|" `which gz` > `which gz`
+sed "s|libgz-tools2-backward.dylib|$CONDA_PREFIX/lib/libgz-tools2-backward.dylib|" `which gz` > `which gz`
+
 cmake ${CMAKE_ARGS} .. \
       -G "Ninja" \
       -DCMAKE_BUILD_TYPE=Release \
