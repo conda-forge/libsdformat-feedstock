@@ -33,15 +33,13 @@ requirements:
     - libgz-utils2
     - urdfdom
     - tinyxml2
-  run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
-    - test -f ${PREFIX}/include/ignition/sdformat{{ version.split('.')[0] }}/sdf/sdf.hh  # [not win]
+    - test -f ${PREFIX}/include/gz/sdformat{{ version.split('.')[0] }}/sdf/sdf.hh  # [not win]
     - test -f ${PREFIX}/lib/libsdformat{{ version.split('.')[0] }}${SHLIB_EXT}  # [unix]
     - test -f ${PREFIX}/lib/cmake/sdformat{{ version.split('.')[0] }}/sdformat{{ version.split('.')[0] }}-config.cmake  # [not win]
-    - if not exist %LIBRARY_INC%\\ignition\\sdformat{{ version.split('.')[0] }}\\sdf\\sdf.hh exit 1  # [win]
+    - if not exist %LIBRARY_INC%\\gz\\sdformat{{ version.split('.')[0] }}\\sdf\\sdf.hh exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\sdformat{{ version.split('.')[0] }}.lib exit 1  # [win]
     - if not exist %LIBRARY_BIN%\\sdformat{{ version.split('.')[0] }}.dll exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\cmake\\sdformat{{ version.split('.')[0] }}\\sdformat{{ version.split('.')[0] }}-config.cmake exit 1  # [win]
