@@ -15,6 +15,7 @@ cmake ^
     -DUSE_EXTERNAL_TINYXML=ON ^
     -DUSE_INTERNAL_URDF=OFF ^
     -DSKIP_usd=true ^
+    -DSKIP_PYBIND11:BOOL=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 

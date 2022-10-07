@@ -1,7 +1,9 @@
-{% set base_name = "libsdformat" %}
+{% set repo_name = "sdformat" %}
 {% set version = "13.0.1" %}
 {% set major_version = version.split('.')[0] %}
-{% set name = base_name + major_version %}
+{% set name = repo_name  + major_version %}
+{% set cxx_name = "lib" + name %}
+{% set python_name = name + "-python" %}
 
 package:
   name: {{ name }}
@@ -13,35 +15,87 @@ source:
 
 build:
   number: 0
-  run_exports:
-    - {{ pin_subpackage(name, max_pin='x') }}
 
-requirements:
-  build:
-    - {{ compiler('cxx') }}
-    - {{ compiler('c') }}
-    - ninja                              # [not win]
-    - ruby                               # [not win]
-    - ruby 2.7                           # [win]
-    - cmake
-    - pkg-config
-  host:
-    - libgz-cmake3
-    - libgz-math7
-    - libgz-tools2
-    - libgz-utils2
-    - urdfdom
-    - tinyxml2
+outputs:
+  - name: {{ cxx_name }}
+    script: build_cxx.sh  # [unix]
+    script: bld_cxx.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage(name, max_pin='x') }}
 
-test:
-  commands:
-    - test -f ${PREFIX}/include/gz/sdformat{{ version.split('.')[0] }}/sdf/sdf.hh  # [not win]
-    - test -f ${PREFIX}/lib/libsdformat{{ version.split('.')[0] }}${SHLIB_EXT}  # [unix]
-    - test -f ${PREFIX}/lib/cmake/sdformat{{ version.split('.')[0] }}/sdformat{{ version.split('.')[0] }}-config.cmake  # [not win]
-    - if not exist %LIBRARY_INC%\\gz\\sdformat{{ version.split('.')[0] }}\\sdf\\sdf.hh exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\sdformat{{ version.split('.')[0] }}.lib exit 1  # [win]
-    - if not exist %LIBRARY_BIN%\\sdformat{{ version.split('.')[0] }}.dll exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\cmake\\sdformat{{ version.split('.')[0] }}\\sdformat{{ version.split('.')[0] }}-config.cmake exit 1  # [win]
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - ninja                              # [not win]
+        - ruby                               # [not win]
+        - ruby 2.7                           # [win]
+        - cmake
+        - pkg-config
+      host:
+        - libgz-cmake3
+        - libgz-math7
+        - libgz-tools2
+        - libgz-utils2
+        - urdfdom
+        - tinyxml2
+
+    test:
+      commands:
+        - test -f ${PREFIX}/include/gz/sdformat{{ version.split('.')[0] }}/sdf/sdf.hh  # [not win]
+        - test -f ${PREFIX}/lib/libsdformat{{ version.split('.')[0] }}${SHLIB_EXT}  # [unix]
+        - test -f ${PREFIX}/lib/cmake/sdformat{{ version.split('.')[0] }}/sdformat{{ version.split('.')[0] }}-config.cmake  # [not win]
+        - if not exist %LIBRARY_INC%\\gz\\sdformat{{ version.split('.')[0] }}\\sdf\\sdf.hh exit 1  # [win]
+        - if not exist %LIBRARY_LIB%\\sdformat{{ version.split('.')[0] }}.lib exit 1  # [win]
+        - if not exist %LIBRARY_BIN%\\sdformat{{ version.split('.')[0] }}.dll exit 1  # [win]
+        - if not exist %LIBRARY_LIB%\\cmake\\sdformat{{ version.split('.')[0] }}\\sdformat{{ version.split('.')[0] }}-config.cmake exit 1  # [win]
+
+  - name: {{ python_name }}
+    script: build_py.sh  # [unix]
+    script: bld_py.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - ninja
+        - cmake
+        - pkg-config
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - pybind11                               # [build_platform != target_platform]
+        - pybind11-abi                           # [build_platform != target_platform]
+        - pytest                                 # [build_platform != target_platform]
+      host:
+        - {{ pin_subpackage(cxx_name, exact=True) }}
+        - python
+        - pip
+        - pybind11
+        - pybind11-abi
+        - pytest
+      run:
+        - {{ pin_subpackage(cxx_name, exact=True) }}
+        - python
+    test:
+      commands:
+        - pip check
+      requires:
+        - pip
+      imports:
+        - sdformat13
+
+  - name: {{ name }}
+    build:
+      run_exports:
+        - {{ pin_subpackage(cxx_name, max_pin='x') }}
+    requirements:
+      run:
+        - {{ pin_subpackage(cxx_name, exact=True) }}
+        - {{ pin_subpackage(python_name, max_pin='x.x.x') }}
+    test:
+      imports:
+        - sdformat13
+
 
 about:
   home: http://sdformat.org/
