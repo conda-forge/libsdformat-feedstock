@@ -28,5 +28,5 @@ cmake ${CMAKE_ARGS} .. \
 cmake --build . --config Release -- -j$CPU_COUNT
 cmake --build . --config Release --target install
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
-ctest  --output-on-failure -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION|UNIT_ign"
+ctest  --output-on-failure -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION|UNIT_gz"
 fi
