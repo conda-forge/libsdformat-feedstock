@@ -14,10 +14,6 @@ if [[ "${target_platform}" == osx-* ]]; then
     CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
-# Patch on the fly gz to handle the tests
-sed "s|libgz-tools2-backward.so|$PREFIX/lib/libgz-tools2-backward.so|" `which gz` > `which gz`
-sed "s|libgz-tools2-backward.dylib|$PREFIX/lib/libgz-tools2-backward.dylib|" `which gz` > `which gz`
-
 cmake ${CMAKE_ARGS} .. \
       -G "Ninja" \
       -DCMAKE_BUILD_TYPE=Release \
