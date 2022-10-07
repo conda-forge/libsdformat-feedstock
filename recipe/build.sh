@@ -15,8 +15,8 @@ if [[ "${target_platform}" == osx-* ]]; then
 fi
 
 # Patch on the fly gz to handle the tests
-sed "s|libgz-tools2-backward.so|$CONDA_PREFIX/lib/libgz-tools2-backward.so|" `which gz` > `which gz`
-sed "s|libgz-tools2-backward.dylib|$CONDA_PREFIX/lib/libgz-tools2-backward.dylib|" `which gz` > `which gz`
+sed "s|libgz-tools2-backward.so|$PREFIX/lib/libgz-tools2-backward.so|" `which gz` > `which gz`
+sed "s|libgz-tools2-backward.dylib|$PREFIX/lib/libgz-tools2-backward.dylib|" `which gz` > `which gz`
 
 cmake ${CMAKE_ARGS} .. \
       -G "Ninja" \
