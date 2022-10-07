@@ -12,6 +12,8 @@ package:
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
     sha256: 4dfb9d938f77d590c4465c9ad5769777e5b0f40dd21c288fe2cc1987d5a0b036
+    patches:
+      - standalone_bindings.patch 
 
 build:
   number: 0
