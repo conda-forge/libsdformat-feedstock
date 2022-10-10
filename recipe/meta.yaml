@@ -25,7 +25,7 @@ outputs:
     script: bld_cxx.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage(name, max_pin='x') }}
+        - {{ pin_subpackage(cxx_name, max_pin='x') }}
 
     requirements:
       build:
