@@ -15,6 +15,7 @@ cmake ^
     -DUSE_EXTERNAL_TINYXML=ON ^
     -DUSE_INTERNAL_URDF=OFF ^
     -DSKIP_usd=true ^
+    -DSKIP_PYBIND11:BOOL=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
@@ -27,7 +28,7 @@ cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
 :: Test.
-ctest -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION"
+ctest -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION|UNIT_gz"
 if errorlevel 1 exit 1
 
 :: Copy the [de]activate scripts to %PREFIX%\etc\conda\[de]activate.d.
