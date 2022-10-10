@@ -1,5 +1,5 @@
-About libsdformat13
-===================
+About sdformat13
+================
 
 Home: http://sdformat.org/
 
@@ -118,27 +118,29 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libsdformat13-green.svg)](https://anaconda.org/conda-forge/libsdformat13) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsdformat13.svg)](https://anaconda.org/conda-forge/libsdformat13) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsdformat13.svg)](https://anaconda.org/conda-forge/libsdformat13) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsdformat13.svg)](https://anaconda.org/conda-forge/libsdformat13) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sdformat13-green.svg)](https://anaconda.org/conda-forge/sdformat13) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdformat13.svg)](https://anaconda.org/conda-forge/sdformat13) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdformat13.svg)](https://anaconda.org/conda-forge/sdformat13) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdformat13.svg)](https://anaconda.org/conda-forge/sdformat13) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sdformat13--python-green.svg)](https://anaconda.org/conda-forge/sdformat13-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdformat13-python.svg)](https://anaconda.org/conda-forge/sdformat13-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdformat13-python.svg)](https://anaconda.org/conda-forge/sdformat13-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdformat13-python.svg)](https://anaconda.org/conda-forge/sdformat13-python) |
 
-Installing libsdformat13
-========================
+Installing sdformat13
+=====================
 
-Installing `libsdformat13` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `sdformat13` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libsdformat13` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libsdformat13, sdformat13, sdformat13-python` can be installed with `conda`:
 
 ```
-conda install libsdformat13
+conda install libsdformat13 sdformat13 sdformat13-python
 ```
 
 or with `mamba`:
 
 ```
-mamba install libsdformat13
+mamba install libsdformat13 sdformat13 sdformat13-python
 ```
 
 It is possible to list all of the versions of `libsdformat13` available on your platform with `conda`:
@@ -208,17 +210,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating libsdformat13-feedstock
-================================
+Updating sdformat13-feedstock
+=============================
 
-If you would like to improve the libsdformat13 recipe or build a new
+If you would like to improve the sdformat13 recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/libsdformat13-feedstock are
+Note that all branches in the conda-forge/sdformat13-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
