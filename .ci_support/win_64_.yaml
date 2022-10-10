@@ -12,3 +12,5 @@ target_platform:
 - win-64
 tinyxml2:
 - '9'
+urdfdom:
+- '3.1'
