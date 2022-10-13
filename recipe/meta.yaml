@@ -79,6 +79,7 @@ outputs:
       run:
         - {{ pin_subpackage(cxx_name, exact=True) }}
         - python
+        - gz-math7-python
     test:
       commands:
         - pip check
