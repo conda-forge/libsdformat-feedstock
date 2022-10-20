@@ -12,6 +12,7 @@ source:
     sha256: c1406103b768afa6df7e8c384ead6b776525e26135f8e6bc2bcfcc321075b5dd
     patches:
       - skipPoseNoValueTest.patch  # [osx]
+      - fixwincmd.patch
 
 build:
   number: 0
