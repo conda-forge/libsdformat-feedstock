@@ -1,0 +1,12 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index a16582d63..8e8ed7267 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -125,6 +125,4 @@ target_include_directories(${PROJECT_LIBRARY_TARGET_NAME}
+     ${CMAKE_CURRENT_SOURCE_DIR}
+ )
+ 
+-if(NOT WIN32)
+-  add_subdirectory(cmd)
+-endif()
++add_subdirectory(cmd)
