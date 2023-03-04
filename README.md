@@ -1,11 +1,11 @@
-About sdformat13
-================
+About sdformat13-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsdformat-feedstock/blob/main/LICENSE.txt)
 
 Home: http://sdformat.org/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsdformat-feedstock/blob/main/LICENSE.txt)
 
 Summary: Simulation Description Format (SDF) parser and description files.
 
