@@ -14,9 +14,10 @@ source:
     sha256: a8e9adede81b34564a47e074d26d5d97b1906db76e0ed0da17af72ed45e79dec
     patches:
       - standalone_bindings.patch
+      - fixgzsdfcommandonwin32.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ cxx_name }}
