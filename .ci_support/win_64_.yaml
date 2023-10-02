@@ -2,6 +2,11 @@ c_compiler:
 - vs2019
 channel_sources:
 - conda-forge
+- conda-forge
+- conda-forge/label/python_rc,conda-forge
+- conda-forge
+- conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -15,6 +20,7 @@ pybind11_abi:
 python:
 - 3.10.* *_cpython
 - 3.11.* *_cpython
+- 3.12.* *_cpython
 - 3.8.* *_cpython
 - 3.9.* *_73_pypy
 - 3.9.* *_cpython
@@ -24,3 +30,6 @@ tinyxml2:
 - '9'
 urdfdom:
 - '3.1'
+zip_keys:
+- - python
+  - channel_sources
