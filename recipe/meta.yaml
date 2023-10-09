@@ -14,6 +14,7 @@ source:
     sha256: a4f38865f7e8b79559c238a1aba7bab1a4ff46c22a67bb91325ad48ba7d25728
     patches:
       - standalone_bindings.patch
+      - standalone_bindings_tests.patch
       - fixgzsdfcommandonwin32.patch
 
 build:
