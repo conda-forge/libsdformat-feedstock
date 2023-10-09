@@ -33,10 +33,9 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('c') }}
         - ninja                              # [not win]
-        - ruby                               # [not win]
-        - ruby 2.7                           # [win]
         - cmake
         - pkg-config
+        - python
       host:
         - libgz-cmake3
         - libgz-math7
@@ -87,7 +86,7 @@ outputs:
       requires:
         - pip
       imports:
-        - sdformat13
+        - sdformat14
 
   - name: {{ name }}
     build:
@@ -99,7 +98,7 @@ outputs:
         - {{ pin_subpackage(python_name, max_pin='x.x.x') }}
     test:
       imports:
-        - sdformat13
+        - sdformat14
 
 
 about:
