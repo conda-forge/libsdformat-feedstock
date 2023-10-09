@@ -6,7 +6,7 @@ index e536c749f..d5b3ef093 100644
 +# Detect if we are doing a standalone build of the bindings, using an external gz-math
 +if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 +  cmake_minimum_required(VERSION 3.16)
-+  set(SDF_VER 13)
++  set(SDF_VER 14)
 +  set(GZ_UTILS_VER 2)
 +  project(sdformat${SDF_VER}-python VERSION ${SDF_VER})
 +  find_package(Python3 COMPONENTS Interpreter Development REQUIRED)

@@ -1,5 +1,5 @@
 {% set repo_name = "sdformat" %}
-{% set version = "13.6.0" %}
+{% set version = "14.0.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = repo_name  + major_version %}
 {% set cxx_name = "lib" + name %}
@@ -11,13 +11,14 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
-    sha256: 6d1d2fde6dc9d328dab6cb44037527a61b05f2ff4929641946d124d229396bd5
+    sha256: a4f38865f7e8b79559c238a1aba7bab1a4ff46c22a67bb91325ad48ba7d25728
     patches:
       - standalone_bindings.patch
+      - standalone_bindings_tests.patch
       - fixgzsdfcommandonwin32.patch
 
 build:
-  number: 2
+  number: 0
 
 
 outputs:
@@ -33,10 +34,9 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('c') }}
         - ninja                              # [not win]
-        - ruby                               # [not win]
-        - ruby 2.7                           # [win]
         - cmake
         - pkg-config
+        - python
       host:
         - libgz-cmake3
         - libgz-math7
@@ -77,6 +77,7 @@ outputs:
         - pybind11
         - pybind11-abi
         - pytest
+        - gz-math7-python
       run:
         - {{ pin_subpackage(cxx_name, exact=True) }}
         - python
@@ -87,7 +88,7 @@ outputs:
       requires:
         - pip
       imports:
-        - sdformat13
+        - sdformat14
 
   - name: {{ name }}
     build:
@@ -99,7 +100,7 @@ outputs:
         - {{ pin_subpackage(python_name, max_pin='x.x.x') }}
     test:
       imports:
-        - sdformat13
+        - sdformat14
 
 
 about:

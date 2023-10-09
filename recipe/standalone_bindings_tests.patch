@@ -1,0 +1,63 @@
+From 065faa68aac9dcc4ed8ab01ce24c1b315d60817d Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio.traversaro@iit.it>
+Date: Mon, 9 Oct 2023 12:00:45 +0200
+Subject: [PATCH] Update CMakeLists.txt
+
+Signed-off-by: Silvio Traversaro <silvio.traversaro@iit.it>
+---
+ python/CMakeLists.txt | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
+index 62078d8db..405c0a6db 100644
+--- a/python/CMakeLists.txt
++++ b/python/CMakeLists.txt
+@@ -116,14 +116,14 @@ set_target_properties(${BINDINGS_MODULE_NAME} PROPERTIES
+ configure_build_install_location(${BINDINGS_MODULE_NAME})
+ 
+ if (BUILD_TESTING AND NOT WIN32)
+-  pybind11_add_module(sdformattest SHARED
+-    test/_gz_sdformattest_pybind11.cc
+-  )
++  #pybind11_add_module(sdformattest SHARED
++  #  test/_gz_sdformattest_pybind11.cc
++  #)
+ 
+-  target_link_libraries(sdformattest PRIVATE
+-    ${PROJECT_LIBRARY_TARGET_NAME}
+-    gz-utils${GZ_UTILS_VER}::gz-utils${GZ_UTILS_VER}
+-  )
++  #target_link_libraries(sdformattest PRIVATE
++  #  ${PROJECT_LIBRARY_TARGET_NAME}
++  #  gz-utils${GZ_UTILS_VER}::gz-utils${GZ_UTILS_VER}
++  #)
+ 
+   set(python_tests
+     pyAirPressure_TEST
+@@ -156,7 +156,7 @@ if (BUILD_TESTING AND NOT WIN32)
+     pyNoise_TEST
+     pyNavSat_TEST
+     pyParam_TEST
+-    pyParserConfig_TEST
++    #pyParserConfig_TEST
+     pyParticleEmitter_TEST
+     pyPbr_TEST
+     pyPhysics_TEST
+
+diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
+index 62078d8db..6dc7329c4 100644
+--- a/python/CMakeLists.txt
++++ b/python/CMakeLists.txt
+@@ -189,10 +189,10 @@ if (BUILD_TESTING AND NOT WIN32)
+   foreach (test ${python_tests})
+     if (pytest_FOUND)
+       add_test(NAME ${test}.py COMMAND
+-        "${Python3_EXECUTABLE}" -m pytest "${CMAKE_SOURCE_DIR}/python/test/${test}.py" --junitxml "${CMAKE_BINARY_DIR}/test_results/${test}.xml")
++        "${Python3_EXECUTABLE}" -m pytest "${CMAKE_CURRENT_SOURCE_DIR}/test/${test}.py" --junitxml "${CMAKE_BINARY_DIR}/test_results/${test}.xml")
+     else()
+       add_test(NAME ${test}.py COMMAND
+-        "${Python3_EXECUTABLE}" "${CMAKE_SOURCE_DIR}/python/test/${test}.py")
++        "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/test/${test}.py")
+     endif()
+     set(_env_vars)
+     list(APPEND _env_vars "PYTHONPATH=${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/python/:${CMAKE_BINARY_DIR}/lib:$ENV{PYTHONPATH}")

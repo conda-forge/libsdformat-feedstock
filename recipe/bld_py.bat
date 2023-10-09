@@ -11,7 +11,7 @@ cmake -G "Ninja" ^
     -DUSE_SYSTEM_PATHS_FOR_PYTHON_INSTALLATION:BOOL=ON ^
     -DPython3_EXECUTABLE:PATH=%PYTHON% ^
     -DPYTHON_EXECUTABLE:PATH=%PYTHON% ^
-    -DBUILD_TESTING:BOOL=OFF ^
+    -DBUILD_TESTING:BOOL=ON ^
     ..
 if errorlevel 1 exit 1
 
@@ -21,4 +21,8 @@ if errorlevel 1 exit 1
 
 :: Install.
 cmake --build . --config Release --target install
+if errorlevel 1 exit 1
+
+:: Test.
+ctest --output-on-failure -C Release
 if errorlevel 1 exit 1
