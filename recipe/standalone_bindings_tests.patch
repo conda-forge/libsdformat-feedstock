@@ -1,19 +1,18 @@
-From da03fc3339f6e10525a4518fda92752ec8e7ecef Mon Sep 17 00:00:00 2001
+From 065faa68aac9dcc4ed8ab01ce24c1b315d60817d Mon Sep 17 00:00:00 2001
 From: Silvio Traversaro <silvio.traversaro@iit.it>
-Date: Mon, 9 Oct 2023 11:52:07 +0200
-Subject: [PATCH] Disable tests that can't work with standalone bindings
- compilation
+Date: Mon, 9 Oct 2023 12:00:45 +0200
+Subject: [PATCH] Update CMakeLists.txt
 
 Signed-off-by: Silvio Traversaro <silvio.traversaro@iit.it>
 ---
- python/CMakeLists.txt | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ python/CMakeLists.txt | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
-index 62078d8db..fc937a3eb 100644
+index 62078d8db..405c0a6db 100644
 --- a/python/CMakeLists.txt
 +++ b/python/CMakeLists.txt
-@@ -116,9 +116,9 @@ set_target_properties(${BINDINGS_MODULE_NAME} PROPERTIES
+@@ -116,14 +116,14 @@ set_target_properties(${BINDINGS_MODULE_NAME} PROPERTIES
  configure_build_install_location(${BINDINGS_MODULE_NAME})
  
  if (BUILD_TESTING AND NOT WIN32)
@@ -24,8 +23,17 @@ index 62078d8db..fc937a3eb 100644
 +  #  test/_gz_sdformattest_pybind11.cc
 +  #)
  
-   target_link_libraries(sdformattest PRIVATE
-     ${PROJECT_LIBRARY_TARGET_NAME}
+-  target_link_libraries(sdformattest PRIVATE
+-    ${PROJECT_LIBRARY_TARGET_NAME}
+-    gz-utils${GZ_UTILS_VER}::gz-utils${GZ_UTILS_VER}
+-  )
++  #target_link_libraries(sdformattest PRIVATE
++  #  ${PROJECT_LIBRARY_TARGET_NAME}
++  #  gz-utils${GZ_UTILS_VER}::gz-utils${GZ_UTILS_VER}
++  #)
+ 
+   set(python_tests
+     pyAirPressure_TEST
 @@ -156,7 +156,7 @@ if (BUILD_TESTING AND NOT WIN32)
      pyNoise_TEST
      pyNavSat_TEST
