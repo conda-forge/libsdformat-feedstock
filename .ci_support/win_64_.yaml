@@ -2,7 +2,6 @@ c_compiler:
 - vs2019
 channel_sources:
 - conda-forge
-- conda-forge/label/python_rc,conda-forge
 channel_targets:
 - conda-forge main
 console_bridge:
@@ -12,4 +11,4 @@ cxx_compiler:
 target_platform:
 - win-64
 urdfdom:
-- '3.1'
+- '4.0'
