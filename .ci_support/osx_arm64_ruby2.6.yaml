@@ -31,7 +31,7 @@ ruby:
 target_platform:
 - osx-arm64
 tinyxml2:
-- '9'
+- '10'
 urdfdom:
 - '4.0'
 zip_keys:
