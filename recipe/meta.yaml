@@ -15,7 +15,6 @@ source:
     patches:
       - standalone_bindings.patch
       - standalone_bindings_tests.patch
-      - fixgzsdfcommandonwin32.patch
 
 build:
   number: 0
