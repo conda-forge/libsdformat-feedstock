@@ -15,9 +15,10 @@ source:
     patches:
       - standalone_bindings.patch
       - standalone_bindings_tests.patch
+      - 1414.patch
 
 build:
-  number: 0
+  number: 1
 
 
 outputs:
@@ -84,6 +85,7 @@ outputs:
     test:
       commands:
         - pip check
+        - python test_sdformat.py
       requires:
         - pip
       imports:
