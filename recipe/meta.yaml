@@ -77,6 +77,7 @@ outputs:
         - pybind11
         - pybind11-abi
         - pytest
+        - libgz-math7
         - gz-math7-python
       run:
         - {{ pin_subpackage(cxx_name, exact=True) }}

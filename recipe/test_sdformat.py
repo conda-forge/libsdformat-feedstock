@@ -1,7 +1,7 @@
 import sdformat14 as sdf
 
 root = sdf.Root()
-root.load("sphere2.sdf")
+root.load("sphere.sdf")
 
 for world_index in range(root.world_count()):
     world = root.world_by_index(world_index)
