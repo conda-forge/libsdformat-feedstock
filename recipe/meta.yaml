@@ -83,6 +83,9 @@ outputs:
         - python
         - gz-math7-python
     test:
+      files:
+        - sphere.sdf
+        - test_sdformat.py
       commands:
         - pip check
         - python test_sdformat.py
