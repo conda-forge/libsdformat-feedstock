@@ -44,7 +44,7 @@ outputs:
         - libgz-utils2
         - urdfdom
         - tinyxml2
-
+        - dlfcn-win32  # [win]
     test:
       commands:
         - test -f ${PREFIX}/include/gz/sdformat{{ version.split('.')[0] }}/sdf/sdf.hh  # [not win]
