@@ -23,6 +23,7 @@ cmake ${CMAKE_ARGS} .. \
       -DBUILD_TESTING=$BUILD_TESTING \
       -DCMAKE_VERBOSE_MAKEFILE=ON \
       -DSKIP_PYBIND11:BOOL=ON \
+      -DGZ_ENABLE_RELOCATABLE_INSTALL:BOOL=ON \
       -DRUBY=$BUILD_PREFIX/bin/ruby
 
 cmake --build . --config Release -- -j$CPU_COUNT
