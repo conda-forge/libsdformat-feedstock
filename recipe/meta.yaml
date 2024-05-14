@@ -15,9 +15,10 @@ source:
     patches:
       - standalone_bindings.patch
       - standalone_bindings_tests.patch
+      - 1414.patch
 
 build:
-  number: 0
+  number: 1
 
 
 outputs:
@@ -43,7 +44,7 @@ outputs:
         - libgz-utils2
         - urdfdom
         - tinyxml2
-
+        - dlfcn-win32  # [win]
     test:
       commands:
         - test -f ${PREFIX}/include/gz/sdformat{{ version.split('.')[0] }}/sdf/sdf.hh  # [not win]
@@ -76,14 +77,19 @@ outputs:
         - pybind11
         - pybind11-abi
         - pytest
+        - libgz-math7
         - gz-math7-python
       run:
         - {{ pin_subpackage(cxx_name, exact=True) }}
         - python
         - gz-math7-python
     test:
+      files:
+        - sphere.sdf
+        - test_sdformat.py
       commands:
         - pip check
+        - python test_sdformat.py
       requires:
         - pip
       imports:

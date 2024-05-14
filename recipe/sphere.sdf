@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="sphere_world">
+    <model name="sphere">
+      <pose>0 1.5 0.5 0 0 0</pose>
+      <link name="sphere_link">
+        <inertial>
+          <inertia>
+            <ixx>3</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>3</iyy>
+            <iyz>0</iyz>
+            <izz>3</izz>
+          </inertia>
+          <mass>3.0</mass>
+        </inertial>
+        <collision name="sphere_collision">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="sphere_visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

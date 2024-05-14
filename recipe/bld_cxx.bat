@@ -16,6 +16,7 @@ cmake ^
     -DUSE_INTERNAL_URDF=OFF ^
     -DSKIP_usd=true ^
     -DSKIP_PYBIND11:BOOL=ON ^
+    -DGZ_ENABLE_RELOCATABLE_INSTALL:BOOL=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
