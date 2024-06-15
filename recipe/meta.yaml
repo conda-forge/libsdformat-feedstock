@@ -1,5 +1,5 @@
 {% set repo_name = "sdformat" %}
-{% set version = "14.2.0" %}
+{% set version = "14.3.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = repo_name  + major_version %}
 {% set cxx_name = "lib" + name %}
@@ -11,14 +11,14 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
-    sha256: 8ecfd48b5cd54a4c8a060a98fec16e2d8d42802d07445f234d608df813e624fc
+    sha256: e04b925709f5bb97dc5bef81b768d57bdc38d327230f2813ab019a055848c629
     patches:
       - standalone_bindings.patch
       - standalone_bindings_tests.patch
       - 1414.patch
 
 build:
-  number: 1
+  number: 0
 
 
 outputs:
@@ -33,6 +33,7 @@ outputs:
       build:
         - {{ compiler('cxx') }}
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - ninja                              # [not win]
         - cmake
         - pkg-config
@@ -61,6 +62,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - ninja
         - cmake
