@@ -234,7 +234,7 @@ Feedstock Maintainers
 =====================
 
 * [@Tobias-Fischer](https://github.com/Tobias-Fischer/)
-* [@conda-forge/ros-core](https://github.com/conda-forge/ros-core/)
+* [@conda-forge/ros-core](https://github.com/orgs/conda-forge/teams/ros-core/)
 * [@j-rivero](https://github.com/j-rivero/)
 * [@seanyen](https://github.com/seanyen/)
 * [@traversaro](https://github.com/traversaro/)
