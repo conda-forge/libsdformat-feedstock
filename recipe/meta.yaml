@@ -15,7 +15,7 @@ source:
       - fixwincmd.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -23,6 +23,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - ninja                              # [not win]
     - ruby                               # [not win]
     - ruby 2.7                           # [win]
@@ -36,8 +37,6 @@ requirements:
     - libignition-common4
     - urdfdom
     - tinyxml2
-  run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
