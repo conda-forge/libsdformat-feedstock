@@ -23,6 +23,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - ninja                              # [not win]
     - ruby                               # [not win]
     - ruby 2.7                           # [win]
