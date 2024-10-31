@@ -17,7 +17,7 @@ source:
       - fixgzsdfcommandonwin32.patch
 
 build:
-  number: 4
+  number: 5
 
 
 outputs:
@@ -32,6 +32,7 @@ outputs:
       build:
         - {{ compiler('cxx') }}
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - ninja                              # [not win]
         - ruby                               # [not win]
         - ruby 2.7                           # [win]
@@ -62,6 +63,7 @@ outputs:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - ninja
         - cmake
         - pkg-config
@@ -74,6 +76,7 @@ outputs:
         - {{ pin_subpackage(cxx_name, exact=True) }}
         - python
         - pip
+        - setuptools
         - pybind11
         - pybind11-abi
         - pytest
