@@ -32,9 +32,6 @@ call "%MICROMAMBA_EXE%" create --yes --root-prefix "%MAMBA_ROOT_PREFIX%" --prefi
     --channel conda-forge ^
     pip python=3.12 conda-build conda-forge-ci-setup=4 "conda-build>=24.1"
 if !errorlevel! neq 0 exit /b !errorlevel!
-echo Moving pkgs cache from %MAMBA_ROOT_PREFIX% to %MINIFORGE_HOME%
-move /Y "%MAMBA_ROOT_PREFIX%\pkgs" "%MINIFORGE_HOME%"
-if !errorlevel! neq 0 exit /b !errorlevel!
 echo Removing %MAMBA_ROOT_PREFIX%
 del /S /Q "%MAMBA_ROOT_PREFIX%"
 del /S /Q "%MICROMAMBA_TMPDIR%"
@@ -77,7 +74,6 @@ call :end_group
 
 :: Build the recipe
 echo Building recipe
-set "CONDA_SOLVER=classic"
 conda-build.exe "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables %EXTRA_CB_OPTIONS%
 if !errorlevel! neq 0 exit /b !errorlevel!
 
