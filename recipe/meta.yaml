@@ -17,7 +17,7 @@ source:
       - standalone_bindings_tests.patch
 
 build:
-  number: 0
+  number: 1
 
 
 outputs:
