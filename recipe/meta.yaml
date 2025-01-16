@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
-    sha256: c1406103b768afa6df7e8c384ead6b776525e26135f8e6bc2bcfcc321075b5dd
+    sha256: 354fec30a43e6efef7e8e9fba89673a33b27918daed0384073501f87416601d2
     patches:
       - skipPoseNoValueTest.patch  # [osx]
       - fixwincmd.patch
