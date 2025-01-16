@@ -1,5 +1,5 @@
 {% set base_name = "libsdformat" %}
-{% set version = "12.6.0" %}
+{% set version = "12.8.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,13 +9,12 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
-    sha256: c1406103b768afa6df7e8c384ead6b776525e26135f8e6bc2bcfcc321075b5dd
+    sha256: 354fec30a43e6efef7e8e9fba89673a33b27918daed0384073501f87416601d2
     patches:
-      - skipPoseNoValueTest.patch  # [osx]
       - fixwincmd.patch
 
 build:
-  number: 5
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -27,6 +26,7 @@ requirements:
     - ninja                              # [not win]
     - ruby                               # [not win]
     - ruby 2.7                           # [win]
+    - libxcrypt1                         # [linux]
     - cmake
     - pkg-config
   host:
