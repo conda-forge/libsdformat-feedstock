@@ -14,6 +14,7 @@ source:
     sha256: a200a0202d389fd5e8ab9339377a7390822608a57ad935a9b6deaecb6f5b5301
     patches:
       - 1509.patch
+      - 1544.patch
 
 build:
   number: 0
