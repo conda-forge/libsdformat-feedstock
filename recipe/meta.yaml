@@ -1,5 +1,5 @@
 {% set repo_name = "sdformat" %}
-{% set version = "15.1.1" %}
+{% set version = "15.2.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = repo_name  + major_version %}
 {% set cxx_name = "lib" + name %}
@@ -11,7 +11,7 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
-    sha256: 9c9b517b390fe6965f76775db67f406b42948ebac433f87fadc680467d45184a
+    sha256: fb391247ae3b02d2f727104ab0b23bc0a906a9d049498a75380f9e0a139f4805
     patches:
       - 1509.patch
       - 1544.patch
