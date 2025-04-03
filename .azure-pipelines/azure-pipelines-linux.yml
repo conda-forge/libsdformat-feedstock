@@ -11,123 +11,123 @@ jobs:
       linux_64_python3.10.____cpythonruby2.5:
         CONFIG: linux_64_python3.10.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.10.____cpythonruby2.6:
         CONFIG: linux_64_python3.10.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.11.____cpythonruby2.5:
         CONFIG: linux_64_python3.11.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.11.____cpythonruby2.6:
         CONFIG: linux_64_python3.11.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.12.____cpythonruby2.5:
         CONFIG: linux_64_python3.12.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.12.____cpythonruby2.6:
         CONFIG: linux_64_python3.12.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.13.____cp313ruby2.5:
         CONFIG: linux_64_python3.13.____cp313ruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.13.____cp313ruby2.6:
         CONFIG: linux_64_python3.13.____cp313ruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.9.____cpythonruby2.5:
         CONFIG: linux_64_python3.9.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.9.____cpythonruby2.6:
         CONFIG: linux_64_python3.9.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.10.____cpythonruby2.5:
         CONFIG: linux_aarch64_python3.10.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.10.____cpythonruby2.6:
         CONFIG: linux_aarch64_python3.10.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.11.____cpythonruby2.5:
         CONFIG: linux_aarch64_python3.11.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.11.____cpythonruby2.6:
         CONFIG: linux_aarch64_python3.11.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.12.____cpythonruby2.5:
         CONFIG: linux_aarch64_python3.12.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.12.____cpythonruby2.6:
         CONFIG: linux_aarch64_python3.12.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.13.____cp313ruby2.5:
         CONFIG: linux_aarch64_python3.13.____cp313ruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.13.____cp313ruby2.6:
         CONFIG: linux_aarch64_python3.13.____cp313ruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.9.____cpythonruby2.5:
         CONFIG: linux_aarch64_python3.9.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_python3.9.____cpythonruby2.6:
         CONFIG: linux_aarch64_python3.9.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.10.____cpythonruby2.5:
         CONFIG: linux_ppc64le_python3.10.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.10.____cpythonruby2.6:
         CONFIG: linux_ppc64le_python3.10.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.11.____cpythonruby2.5:
         CONFIG: linux_ppc64le_python3.11.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.11.____cpythonruby2.6:
         CONFIG: linux_ppc64le_python3.11.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.12.____cpythonruby2.5:
         CONFIG: linux_ppc64le_python3.12.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.12.____cpythonruby2.6:
         CONFIG: linux_ppc64le_python3.12.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.13.____cp313ruby2.5:
         CONFIG: linux_ppc64le_python3.13.____cp313ruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.13.____cp313ruby2.6:
         CONFIG: linux_ppc64le_python3.13.____cp313ruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.9.____cpythonruby2.5:
         CONFIG: linux_ppc64le_python3.9.____cpythonruby2.5
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_python3.9.____cpythonruby2.6:
         CONFIG: linux_ppc64le_python3.9.____cpythonruby2.6
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
     maxParallel: 27
   timeoutInMinutes: 360
   variables: {}
