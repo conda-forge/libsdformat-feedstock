@@ -22,8 +22,6 @@ cxx_compiler_version:
 - '18'
 macos_machine:
 - arm64-apple-darwin20.0.0
-ruby:
-- '2.5'
 target_platform:
 - osx-arm64
 urdfdom:
