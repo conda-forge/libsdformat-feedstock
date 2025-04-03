@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ version.split('.')[0] }}_{{ version }}.tar.gz
-    sha256: 6aabb4e08073d506f27a8e801eb175cca9a1c938e4fbff6b30f0b2ddf52a9b5e
+    sha256: ec6e7e5a5eaf7dfb3bfedeb55c5b348ec74bce44e1e1fbe2f29ab9df335c6ca6
     patches:
       - sdformat.patch
 
