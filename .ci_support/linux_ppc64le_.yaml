@@ -33,7 +33,7 @@ python:
 target_platform:
 - linux-ppc64le
 tinyxml2:
-- '10'
+- '11.0'
 urdfdom:
 - '4.0'
 zip_keys:
