@@ -1,5 +1,5 @@
 {% set name = "libsdformat" %}
-{% set version = "9.10.2" %}
+{% set version = "9.8.0" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,7 @@ source:
       - sdformat.patch
 
 build:
-  number: 0
+  number: 8
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -24,7 +24,7 @@ requirements:
     - ninja                              # [not win]
     - ruby                               # [not win]
     - ruby 2.7                           # [win]
-    - cmake 3.*
+    - cmake
     - pkg-config
   host:
     - libignition-math6
