@@ -22,8 +22,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - ninja                              # [not win]
-    - ruby
-    - ruby 2.7  # [win]
+    - ruby                               # [not win]
+    - ruby 2.7                           # [win]
     - cmake
     - pkg-config
   host:
