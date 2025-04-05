@@ -34,6 +34,8 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - ninja                              # [not win]
+        # Workaround for https://github.com/conda-forge/libsdformat-feedstock/pull/142#issuecomment-2780668913
+        - libxcrypt1
         - ruby                               # [not win]
         - ruby 2.7                           # [win]
         - cmake
