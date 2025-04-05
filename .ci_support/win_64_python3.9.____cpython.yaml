@@ -19,6 +19,6 @@ python:
 target_platform:
 - win-64
 tinyxml2:
-- '10'
+- '11.0'
 urdfdom:
 - '4.0'
