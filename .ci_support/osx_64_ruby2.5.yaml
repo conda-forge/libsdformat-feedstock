@@ -27,7 +27,7 @@ ruby:
 target_platform:
 - osx-64
 tinyxml2:
-- '10'
+- '11.0'
 urdfdom:
 - '4.0'
 zip_keys:
