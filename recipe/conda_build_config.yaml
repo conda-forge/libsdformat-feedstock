@@ -6,3 +6,6 @@ c_compiler_version:            # [osx]
   - 17                         # [osx]
 cxx_compiler_version:          # [osx]
   - 17                         # [osx]
+docker_image:                                   # [linux]
+  - quay.io/condaforge/linux-anvil-cos7-x86_64  # [linux]
+  
