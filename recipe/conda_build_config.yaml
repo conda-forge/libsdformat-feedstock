@@ -2,3 +2,8 @@ macos_min_version:             # [osx and x86_64]
   - 10.14                      # [osx and x86_64]
 c_stdlib_version:              # [osx and x86_64]
   - 10.14                      # [osx and x86_64]
+# Workaround for https://github.com/conda-forge/libsdformat-feedstock/pull/142#issuecomment-2780662380
+c_compiler_version:            # [osx]
+  - 17                         # [osx]
+cxx_compiler_version:          # [osx]
+  - 17                         # [osx]
