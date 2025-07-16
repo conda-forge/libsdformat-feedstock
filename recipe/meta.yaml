@@ -1,5 +1,5 @@
 {% set repo_name = "sdformat" %}
-{% set version = "14.5.0" %}
+{% set version = "14.8.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = repo_name  + major_version %}
 {% set cxx_name = "lib" + name %}
@@ -18,7 +18,7 @@ source:
       - 1414.patch
 
 build:
-  number: 3
+  number: 0
 
 
 outputs:
