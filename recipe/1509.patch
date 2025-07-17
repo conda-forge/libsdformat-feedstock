@@ -1,8 +1,8 @@
-From 4254e2868d11d1ffdc165d74b4351fee14371eed Mon Sep 17 00:00:00 2001
+From 513f86ed79074d506bbbed64a2159e01289d73a1 Mon Sep 17 00:00:00 2001
 From: Silvio Traversaro <silvio@traversaro.it>
-Date: Sat, 16 Nov 2024 18:49:02 +0100
-Subject: [PATCH] Permit to test when building bindings separately from main
- library
+Date: Mon, 18 Nov 2024 13:48:43 +0100
+Subject: [PATCH 2/2] Permit to test when building bindings separately from
+ main library (#1509)
 
 Signed-off-by: Silvio Traversaro <silvio@traversaro.it>
 ---
@@ -10,7 +10,7 @@ Signed-off-by: Silvio Traversaro <silvio@traversaro.it>
  1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
-index 5baa66271..58be732aa 100644
+index 1aca2989..53fbeaec 100644
 --- a/python/CMakeLists.txt
 +++ b/python/CMakeLists.txt
 @@ -10,6 +10,12 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
@@ -23,10 +23,10 @@ index 5baa66271..58be732aa 100644
 +                   ${PROJECT_BINARY_DIR}/include/test_config.hh)
 +    include_directories(${PROJECT_BINARY_DIR}/include)
 +  endif()
- endif()
- 
- set(PYBIND11_PYTHON_VERSION 3)
-@@ -199,10 +205,10 @@ if (BUILD_TESTING AND NOT WIN32)
+ elseif(${CMAKE_VERSION} VERSION_LESS "3.12.0")
+   # TODO: remove once the minimum CMake version is increased
+   if(WIN32 AND CMAKE_BUILD_TYPE STREQUAL "Debug")
+@@ -215,10 +221,10 @@ if (BUILD_TESTING AND NOT WIN32)
    foreach (test ${python_tests})
      if (pytest_FOUND)
        add_test(NAME ${test}.py COMMAND
@@ -39,3 +39,5 @@ index 5baa66271..58be732aa 100644
      endif()
      set(_env_vars)
      list(APPEND _env_vars "PYTHONPATH=${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/python/:${CMAKE_BINARY_DIR}/lib:$ENV{PYTHONPATH}")
+-- 
+2.43.0
