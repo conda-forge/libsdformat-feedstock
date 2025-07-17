@@ -1,8 +1,19 @@
+From fa068978790aa722cab2fbb17a4d89c1c63fb7e0 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Sat, 15 Feb 2025 00:32:48 +0100
+Subject: [PATCH 1/2] Build sdformattest pybind11 library as MODULE (#1544)
+
+Signed-off-by: Silvio Traversaro <silvio@traversaro.it>
+Co-authored-by: Steve Peters <scpeters@openrobotics.org>
+---
+ python/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
-index 81bf3c1f0..5a52cb675 100644
+index 41b511cc..1aca2989 100644
 --- a/python/CMakeLists.txt
 +++ b/python/CMakeLists.txt
-@@ -133,7 +133,7 @@ set_target_properties(${BINDINGS_MODULE_NAME} PROPERTIES
+@@ -142,7 +142,7 @@ set_target_properties(${BINDINGS_MODULE_NAME} PROPERTIES
  configure_build_install_location(${BINDINGS_MODULE_NAME})
  
  if (BUILD_TESTING AND NOT WIN32)
@@ -10,3 +21,7 @@ index 81bf3c1f0..5a52cb675 100644
 +  pybind11_add_module(sdformattest MODULE
      test/_gz_sdformattest_pybind11.cc
    )
+ 
+-- 
+2.43.0
+
