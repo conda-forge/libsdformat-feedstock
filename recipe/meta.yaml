@@ -12,9 +12,6 @@ package:
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat{{ major_version }}_{{ version }}.tar.gz
     sha256: 0b520633a2f997be73d5e8997f41c4256c1f879abc2f8c2de7c01801035413cc
-    patches:
-      - standalone_bindings.patch
-      - fixgzsdfcommandonwin32.patch
 
 build:
   number: 0
