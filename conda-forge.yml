@@ -1,8 +1,9 @@
 bot:
+  # See https://github.com/gazebosim/docs/blob/master/tools/versions.md for the up-to-date
+  # list of non-EOL distros, please also keep v9 for gazebo-classic even if EOL
   abi_migration_branches:
   - v9
   - v12
-  - v13
   - v14
 build_platform:
   linux_aarch64: linux_64
