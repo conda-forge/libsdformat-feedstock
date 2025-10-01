@@ -1,0 +1,196 @@
+schema_version: 1
+
+context:
+  repo_name: sdformat
+  version: 14.8.0
+  major_version: "14"
+  name: ${{ repo_name + major_version }}
+  cxx_name: ${{ "lib" + name }}
+  python_name: ${{ name + "-python" }}
+
+recipe:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/osrf/sdformat/archive/sdformat${{ major_version }}_${{ version }}.tar.gz
+    sha256: ed8108df0c5e2c13533d60c84a7d6385762f1d6486bc322f078c216161fd9168
+    patches:
+      - 1509.patch
+      - 1544.patch
+
+build:
+  number: 2
+
+outputs:
+  - package:
+      name: ${{ cxx_name }}
+    build:
+      script:
+        - if: unix
+          then: build_cxx.sh
+        - if: win
+          then: bld_cxx.bat
+    requirements:
+      build:
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - if: not win
+          then:
+            - ninja
+        - cmake
+        - pkg-config
+        - python
+      host:
+        - libgz-cmake3
+        - libgz-math7
+        - libgz-tools2
+        - libgz-utils2
+        - urdfdom
+        - tinyxml2
+        - if: win
+          then:
+            - dlfcn-win32
+      run_exports:
+        - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
+    tests:
+      - script:
+          - if: not win
+            then:
+              - test -f ${PREFIX}/include/gz/sdformat${{ major_version }}/sdf/sdf.hh
+              - test -f ${PREFIX}/lib/cmake/sdformat${{ major_version }}/sdformat${{ major_version }}-config.cmake
+          - if: unix
+            then:
+              - test -f ${PREFIX}/lib/libsdformat${{ major_version }}${SHLIB_EXT}
+          - if: win
+            then:
+              - if not exist %LIBRARY_INC%\\gz\\sdformat${{ major_version }}\\sdf\\sdf.hh exit 1
+              - if not exist %LIBRARY_LIB%\\sdformat${{ major_version }}.lib exit 1
+              - if not exist %LIBRARY_BIN%\\sdformat${{ major_version }}.dll exit 1
+              - if not exist %LIBRARY_LIB%\\cmake\\sdformat${{ major_version }}\\sdformat${{ major_version }}-config.cmake exit 1
+
+  - package:
+      name: ${{ python_name }}
+    build:
+      script:
+        - if: unix
+          then: build_py.sh
+        - if: win
+          then: bld_py.bat
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler('cxx') }}
+        - ninja
+        - cmake
+        - pkg-config
+        - if: build_platform != target_platform
+          then:
+            - python
+            - cross-python_${{ target_platform }}
+            - pybind11
+            - pybind11-abi
+            - pytest
+      host:
+        - ${{ pin_subpackage(cxx_name, exact=True) }}
+        - python
+        - pybind11
+        - pybind11-abi
+        - pytest
+        - libgz-math7
+        - gz-math7-python
+      run:
+        - ${{ pin_subpackage(cxx_name, exact=True) }}
+        - python
+        - gz-math7-python
+    tests:
+      - files:
+          recipe:
+            - sphere.sdf
+            - test_sdformat.py
+        requirements:
+          run:
+            - pip
+        script:
+          - python test_sdformat.py
+      - python:
+          imports:
+            - sdformat14
+
+  - package:
+      name: ${{ name }}
+    requirements:
+      run:
+        - ${{ pin_subpackage(cxx_name, exact=True) }}
+        - ${{ pin_subpackage(python_name, upper_bound='x.x.x') }}
+      run_exports:
+        - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
+    tests:
+      - python:
+          imports:
+            - sdformat14
+
+  # Versionless dummy packages, see https://github.com/conda-forge/gz-sim-feedstock/issues/102
+  - package:
+      name: libsdformat
+    requirements:
+      run:
+        - ${{ pin_subpackage(cxx_name, exact=true) }}
+      run_exports:
+        - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
+        - ${{ pin_subpackage('libsdformat', upper_bound='x') }}
+    tests:
+      - script:
+          - cmake-package-check sdformat14
+        requirements:
+          run:
+            - cmake-package-check
+            - ${{ compiler('c') }}
+            - ${{ compiler('cxx') }}
+
+  - package:
+      name: sdformat-python
+    requirements:
+      run:
+        - ${{ pin_subpackage(python_name, upper_bound='x.x.x') }}
+    tests:
+      - python:
+          imports:
+            - sdformat14
+
+  - package:
+      name: sdformat
+    requirements:
+      run:
+        - ${{ pin_subpackage(name, exact=true) }}
+      run_exports:
+        - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
+        - ${{ pin_subpackage('libsdformat', upper_bound='x') }}
+    tests:
+      - script:
+          - cmake-package-check sdformat14
+        requirements:
+          run:
+            - cmake-package-check
+            - ${{ compiler('c') }}
+            - ${{ compiler('cxx') }}
+      - python:
+          imports:
+            - sdformat14
+
+about:
+  homepage: http://sdformat.org/
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: |
+    Simulation Description Format (SDF) parser and description files.
+
+extra:
+  recipe-maintainers:
+    - seanyen
+    - j-rivero
+    - conda-forge/ros-core
+    - Tobias-Fischer
+    - traversaro
