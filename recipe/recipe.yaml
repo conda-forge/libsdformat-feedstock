@@ -104,7 +104,7 @@ outputs:
         - gz-math8-python
     tests:
       - files:
-          source:
+          recipe:
             - sphere.sdf
             - test_sdformat.py
         requirements:
