@@ -124,11 +124,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libsdformat-green.svg)](https://anaconda.org/conda-forge/libsdformat) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsdformat.svg)](https://anaconda.org/conda-forge/libsdformat) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsdformat.svg)](https://anaconda.org/conda-forge/libsdformat) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsdformat.svg)](https://anaconda.org/conda-forge/libsdformat) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libsdformat15-green.svg)](https://anaconda.org/conda-forge/libsdformat15) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsdformat15.svg)](https://anaconda.org/conda-forge/libsdformat15) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsdformat15.svg)](https://anaconda.org/conda-forge/libsdformat15) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsdformat15.svg)](https://anaconda.org/conda-forge/libsdformat15) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-sdformat-green.svg)](https://anaconda.org/conda-forge/sdformat) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdformat.svg)](https://anaconda.org/conda-forge/sdformat) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdformat.svg)](https://anaconda.org/conda-forge/sdformat) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdformat.svg)](https://anaconda.org/conda-forge/sdformat) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-sdformat--python-green.svg)](https://anaconda.org/conda-forge/sdformat-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdformat-python.svg)](https://anaconda.org/conda-forge/sdformat-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdformat-python.svg)](https://anaconda.org/conda-forge/sdformat-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdformat-python.svg)](https://anaconda.org/conda-forge/sdformat-python) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-sdformat15-green.svg)](https://anaconda.org/conda-forge/sdformat15) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdformat15.svg)](https://anaconda.org/conda-forge/sdformat15) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdformat15.svg)](https://anaconda.org/conda-forge/sdformat15) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdformat15.svg)](https://anaconda.org/conda-forge/sdformat15) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-sdformat15--python-green.svg)](https://anaconda.org/conda-forge/sdformat15-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdformat15-python.svg)](https://anaconda.org/conda-forge/sdformat15-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdformat15-python.svg)](https://anaconda.org/conda-forge/sdformat15-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdformat15-python.svg)](https://anaconda.org/conda-forge/sdformat15-python) |
 
 Installing libsdformat
 ======================
@@ -140,16 +137,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libsdformat, libsdformat15, sdformat, sdformat-python, sdformat15, sdformat15-python` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libsdformat, sdformat, sdformat-python` can be installed with `conda`:
 
 ```
-conda install libsdformat libsdformat15 sdformat sdformat-python sdformat15 sdformat15-python
+conda install libsdformat sdformat sdformat-python
 ```
 
 or with `mamba`:
 
 ```
-mamba install libsdformat libsdformat15 sdformat sdformat-python sdformat15 sdformat15-python
+mamba install libsdformat sdformat sdformat-python
 ```
 
 It is possible to list all of the versions of `libsdformat` available on your platform with `conda`:
@@ -199,12 +196,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -231,7 +228,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/libsdformat-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
