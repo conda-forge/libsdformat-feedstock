@@ -1,4 +1,4 @@
-import sdformat15 as sdf
+import sdformat as sdf
 
 root = sdf.Root()
 root.load("sphere.sdf")
