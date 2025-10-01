@@ -117,7 +117,7 @@ outputs:
           - python test_sdformat.py
       - python:
           imports:
-            - sdformat
+            - sdformat14
 
   - package:
       name: ${{ name }}
