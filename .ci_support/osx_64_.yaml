@@ -12,7 +12,6 @@ c_stdlib_version:
 - '10.14'
 channel_sources:
 - conda-forge
-- conda-forge,conda-forge/label/python_rc
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -28,7 +27,7 @@ target_platform:
 tinyxml2:
 - '11.0'
 urdfdom:
-- '4.0'
+- '5.1'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
