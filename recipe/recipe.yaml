@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   repo_name: sdformat
-  version: "16.0.1"
+  version: "16.1.0"
   major_version: "16"
   name: ${{ repo_name }}
   cxx_name: ${{ "lib" + name }}
@@ -14,10 +14,10 @@ recipe:
 
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat${{ major_version }}_${{ version }}.tar.gz
-    sha256: 4fac898700afb2953af5f8ac6b0221e4d9bc1e460aac6d4b7a5c3699c456126c
+    sha256: f9ef71787b0055f7ee35a3b52f42a9d6397f0c2f21f9572957bc3f456e2ca674
 
 build:
-  number: 3
+  number: 0
 
 outputs:
   - package:
