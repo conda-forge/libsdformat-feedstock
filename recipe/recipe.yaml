@@ -20,7 +20,7 @@ source:
       - 1544.patch
 
 build:
-  number: 4
+  number: 5
 
 outputs:
   - package:
