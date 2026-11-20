@@ -18,9 +18,12 @@ source:
     patches:
       - 1509.patch
       - 1544.patch
+      # Python >=3.15 on conda-forge does not ship libpython in host,
+      # so only request the Development.Module component
+      - python_development_module.patch
 
 build:
-  number: 5
+  number: 6
 
 outputs:
   - package:
@@ -40,7 +43,7 @@ outputs:
           then:
             - ninja
         - cmake
-        - pkg-config
+        - pkgconf
         - python
       host:
         - libgz-cmake3
