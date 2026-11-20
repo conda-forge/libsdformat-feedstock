@@ -37,7 +37,7 @@ outputs:
           then:
             - ninja
         - cmake
-        - pkg-config
+        - pkgconf
         - python
       host:
         - libgz-cmake4
