@@ -15,6 +15,9 @@ recipe:
 source:
   - url: https://github.com/osrf/sdformat/archive/sdformat${{ major_version }}_${{ version }}.tar.gz
     sha256: f9ef71787b0055f7ee35a3b52f42a9d6397f0c2f21f9572957bc3f456e2ca674
+    patches:
+      # Python >= 3.15 on conda-forge does not ship libpython by default
+      - python_development_module.patch
 
 build:
   number: 2

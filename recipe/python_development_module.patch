@@ -1,0 +1,16 @@
+The bindings are a Python extension module and never embed the interpreter,
+so only Development.Module is needed. Requiring the full Development
+component (which includes Development.Embed) fails when libpython is not
+available, as is the case for Python >= 3.15 on conda-forge.
+
+--- a/python/CMakeLists.txt	2026-11-22 08:16:50
++++ b/python/CMakeLists.txt	2026-11-22 08:16:51
+@@ -7,7 +7,7 @@
+   find_package(sdformat 16 REQUIRED)
+   set(PROJECT_LIBRARY_TARGET_NAME "sdformat::sdformat")
+   # require python dependencies to be found
+-  find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
++  find_package(Python3 COMPONENTS Interpreter Development.Module REQUIRED)
+   set(CMAKE_REQUIRE_FIND_PACKAGE_pybind11 TRUE)
+   include(GNUInstallDirs)
+   include(CTest)
